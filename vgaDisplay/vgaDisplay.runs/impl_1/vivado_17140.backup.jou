@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2.2 (64-bit)
+# SW Build 6060944 on Thu Mar 06 19:10:01 MST 2025
+# IP Build 6050500 on Thu Mar  6 23:33:39 MST 2025
+# SharedData Build 6060542 on Thu Mar 06 10:31:07 MST 2025
+# Start of session at: Sun Aug 16 12:53:19 2026
+# Process ID         : 17140
+# Current directory  : O:/ENGS31/vgaDisplay/vgaDisplay.runs/impl_1
+# Command line       : vivado.exe -log vga_test_Shell.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source vga_test_Shell.tcl -notrace
+# Log file           : O:/ENGS31/vgaDisplay/vgaDisplay.runs/impl_1/vga_test_Shell.vdi
+# Journal file       : O:/ENGS31/vgaDisplay/vgaDisplay.runs/impl_1\vivado.jou
+# Running On         : c011-09
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Intel(R) Core(TM) i7-14700
+# CPU Frequency      : 2112 MHz
+# CPU Physical cores : 20
+# CPU Logical cores  : 28
+# Host memory        : 34031 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 36178 MB
+# Available Virtual  : 24559 MB
+#-----------------------------------------------------------
+source vga_test_Shell.tcl -notrace

@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../vgaDisplay.srcs/sim_1/imports/vgaTestFiles/vga_test.vhd" \
+"../../../../vgaDisplay.srcs/sim_1/imports/vgaTestFiles/vga_test_clk.vhd" \
+"../../../../vgaDisplay.srcs/sim_1/new/vga_test_Shell.vhd" \
+
+# Do not sort compile order
+nosort
