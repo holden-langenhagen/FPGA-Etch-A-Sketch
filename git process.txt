@@ -1,0 +1,9 @@
+Update local files with most recent cloud data
+
+*open terminal in folder FPGA-ETCH-A-SKETCH
+git pull origin master
+
+WHEN YOU HAVE A FUNCTIONING THING (DONT PUSH BROKEN CHANGES)
+git add .
+git commit -m "Description here"
+git push origin master
