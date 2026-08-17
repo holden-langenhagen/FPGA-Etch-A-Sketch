@@ -42,3 +42,5 @@ add_files {O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/VGA/vga_controller.vh
 update_compile_order -fileset sources_1
 update_compile_order -fileset sources_1
 add_files -fileset constrs_1 -norecurse O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/ENGS31_Constraints_Template.xdc
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Aug 17 14:19:51 2026...
