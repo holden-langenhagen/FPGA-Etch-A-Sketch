@@ -68,7 +68,7 @@ begin
         Hsync_port<='1';
     end if;
     
-    if(ycord>489) and (ycord<490) then
+    if(ycord>=490) and (ycord<=491) then
         Vsync_port<='0'; --low is the active sync pulse
     else
         Vsync_port<='1';
@@ -81,7 +81,7 @@ begin
     end if;
 end process setSyncs;
 
-video_on <= '0' when xcord > 639 else '1';
+video_on <= '0' when (xcord > 639) or (ycord > 479) else '1';
 
 -- logic to send dummy address to frame buffer after reaching video blank region
 outputLogic : process(video_on,xcord,ycord)

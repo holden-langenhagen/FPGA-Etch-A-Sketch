@@ -3,8 +3,8 @@
 # SW Build 6060944 on Thu Mar 06 19:10:01 MST 2025
 # IP Build 6050500 on Thu Mar  6 23:33:39 MST 2025
 # SharedData Build 6060542 on Thu Mar 06 10:31:07 MST 2025
-# Start of session at: Mon Aug 17 20:04:39 2026
-# Process ID         : 19232
+# Start of session at: Mon Aug 17 21:12:44 2026
+# Process ID         : 17580
 # Current directory  : O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VIVADO/FPGA_Etch_A_Sketch.runs/impl_1
 # Command line       : vivado.exe -log top_shell.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_shell.tcl -notrace
 # Log file           : O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VIVADO/FPGA_Etch_A_Sketch.runs/impl_1/top_shell.vdi
@@ -19,6 +19,6 @@
 # Host memory        : 34031 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 36178 MB
-# Available Virtual  : 13647 MB
+# Available Virtual  : 24206 MB
 #-----------------------------------------------------------
 source top_shell.tcl -notrace

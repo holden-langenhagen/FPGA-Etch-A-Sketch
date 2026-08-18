@@ -56,11 +56,6 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 7
-set_param checkpoint.writeSynthRtdsInDcp 1
-set_param xicom.use_bs_reader 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -78,7 +73,7 @@ set_property ip_output_repo o:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VIVADO/FP
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files o:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/mona_lisa_640x480_1bit.coe
+add_files O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/mona_lisa_640x480_1bit.coe
 read_vhdl -library xil_defaultlib {
   O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/button_conditioning.vhd
   O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/clock_divider.vhd
@@ -88,7 +83,7 @@ read_vhdl -library xil_defaultlib {
   O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/frame_updater.vhd
   O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/vga_synchronizer.vhd
 }
-read_ip -quiet o:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VIVADO/FPGA_Etch_A_Sketch.srcs/sources_1/ip/frame_buffer_IP/frame_buffer_IP.xci
+read_ip -quiet O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VIVADO/FPGA_Etch_A_Sketch.srcs/sources_1/ip/frame_buffer_IP/frame_buffer_IP.xci
 set_property used_in_implementation false [get_files -all o:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VIVADO/FPGA_Etch_A_Sketch.gen/sources_1/ip/frame_buffer_IP/frame_buffer_IP_ooc.xdc]
 
 OPTRACE "Adding files" END { }

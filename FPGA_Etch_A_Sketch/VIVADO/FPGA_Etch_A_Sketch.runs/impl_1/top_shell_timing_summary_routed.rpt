@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
-| Date         : Mon Aug 17 20:05:14 2026
+| Date         : Mon Aug 17 21:13:19 2026
 | Host         : c011-09 running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -report_unconstrained -file top_shell_timing_summary_routed.rpt -pb top_shell_timing_summary_routed.pb -rpx top_shell_timing_summary_routed.rpx -warn_on_violation
 | Design       : top_shell
@@ -56,7 +56,7 @@ Table of Contents
 1. checking no_clock (89)
 2. checking constant_clock (0)
 3. checking pulse_width_clock (0)
-4. checking unconstrained_internal_endpoints (425)
+4. checking unconstrained_internal_endpoints (424)
 5. checking no_input_delay (0)
 6. checking no_output_delay (5)
 7. checking multiple_clock (0)
@@ -81,9 +81,9 @@ Table of Contents
  There are 0 register/latch pins which need pulse_width check
 
 
-4. checking unconstrained_internal_endpoints (425)
+4. checking unconstrained_internal_endpoints (424)
 --------------------------------------------------
- There are 425 pins that are not constrained for maximum delay. (HIGH)
+ There are 424 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
@@ -476,100 +476,118 @@ Path Group:  (none)
 From Clock:  
   To Clock:  
 
-Max Delay           430 Endpoints
-Min Delay           430 Endpoints
+Max Delay           429 Endpoints
+Min Delay           429 Endpoints
 --------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 <hidden>
-                            (rising edge-triggered cell RAMB36E1)
+  Source:                 vga_control/xcord_reg[6]/C
+                            (rising edge-triggered cell FDRE)
   Destination:            vgaR_ext_port
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        10.886ns  (logic 5.585ns (51.309%)  route 5.301ns (48.691%))
-  Logic Levels:           6  (LUT2=1 LUT6=1 MUXF7=1 OBUF=1 RAMB36E1=2)
+  Data Path Delay:        11.580ns  (logic 5.450ns (47.069%)  route 6.129ns (52.931%))
+  Logic Levels:           8  (CARRY4=4 FDRE=1 LUT2=1 LUT3=1 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    RAMB36_X0Y12         RAMB36E1                     0.000     0.000 r  <hidden>
-    RAMB36_X0Y12         RAMB36E1 (Prop_ramb36e1_CLKARDCLK_CASCADEOUTA)
-                                                      1.028     1.028 r  <hidden>
-                         net (fo=1, routed)           0.065     1.093    <hidden>
-    RAMB36_X0Y13         RAMB36E1 (Prop_ramb36e1_CASCADEINA_DOADO[0])
-                                                      0.425     1.518 f  <hidden>
-                         net (fo=1, routed)           1.781     3.299    <hidden>
-    SLICE_X8Y43          LUT6 (Prop_lut6_I0_O)        0.124     3.423 f  <hidden>
-                         net (fo=1, routed)           0.000     3.423    <hidden>
-    SLICE_X8Y43          MUXF7 (Prop_muxf7_I0_O)      0.209     3.632 f  <hidden>
-                         net (fo=1, routed)           0.596     4.228    vga_control/douta[0]
-    SLICE_X8Y45          LUT2 (Prop_lut2_I0_O)        0.297     4.525 r  vga_control/vgaR_ext_port_OBUF_inst_i_1/O
-                         net (fo=3, routed)           2.859     7.384    vgaB_ext_port_OBUF
-    N19                  OBUF (Prop_obuf_I_O)         3.502    10.886 r  vgaR_ext_port_OBUF_inst/O
-                         net (fo=0)                   0.000    10.886    vgaR_ext_port
+    SLICE_X9Y51          FDRE                         0.000     0.000 r  vga_control/xcord_reg[6]/C
+    SLICE_X9Y51          FDRE (Prop_fdre_C_Q)         0.456     0.456 r  vga_control/xcord_reg[6]/Q
+                         net (fo=8, routed)           1.456     1.912    vga_control/xcord_reg_n_0_[6]
+    SLICE_X8Y54          LUT2 (Prop_lut2_I0_O)        0.124     2.036 r  vga_control/i__carry_i_7/O
+                         net (fo=1, routed)           0.000     2.036    vga_control/i__carry_i_7_n_0
+    SLICE_X8Y54          CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     2.549 r  vga_control/video_on2_inferred__0/i__carry/CO[3]
+                         net (fo=1, routed)           0.000     2.549    vga_control/video_on2_inferred__0/i__carry_n_0
+    SLICE_X8Y55          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     2.666 r  vga_control/video_on2_inferred__0/i__carry__0/CO[3]
+                         net (fo=1, routed)           0.000     2.666    vga_control/video_on2_inferred__0/i__carry__0_n_0
+    SLICE_X8Y56          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     2.783 r  vga_control/video_on2_inferred__0/i__carry__1/CO[3]
+                         net (fo=1, routed)           0.000     2.783    vga_control/video_on2_inferred__0/i__carry__1_n_0
+    SLICE_X8Y57          CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.254     3.037 f  vga_control/video_on2_inferred__0/i__carry__2/CO[0]
+                         net (fo=20, routed)          1.735     4.771    vga_control/video_on2_inferred__0/i__carry__2_n_3
+    SLICE_X8Y48          LUT3 (Prop_lut3_I1_O)        0.367     5.138 r  vga_control/vgaR_ext_port_OBUF_inst_i_1/O
+                         net (fo=3, routed)           2.939     8.077    vgaB_ext_port_OBUF
+    N19                  OBUF (Prop_obuf_I_O)         3.502    11.580 r  vgaR_ext_port_OBUF_inst/O
+                         net (fo=0)                   0.000    11.580    vgaR_ext_port
     N19                                                               r  vgaR_ext_port (OUT)
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 <hidden>
-                            (rising edge-triggered cell RAMB36E1)
+  Source:                 vga_control/xcord_reg[6]/C
+                            (rising edge-triggered cell FDRE)
   Destination:            vgaB_ext_port
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        10.621ns  (logic 5.608ns (52.799%)  route 5.013ns (47.201%))
-  Logic Levels:           6  (LUT2=1 LUT6=1 MUXF7=1 OBUF=1 RAMB36E1=2)
+  Data Path Delay:        11.315ns  (logic 5.473ns (48.368%)  route 5.842ns (51.632%))
+  Logic Levels:           8  (CARRY4=4 FDRE=1 LUT2=1 LUT3=1 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    RAMB36_X0Y12         RAMB36E1                     0.000     0.000 r  <hidden>
-    RAMB36_X0Y12         RAMB36E1 (Prop_ramb36e1_CLKARDCLK_CASCADEOUTA)
-                                                      1.028     1.028 r  <hidden>
-                         net (fo=1, routed)           0.065     1.093    <hidden>
-    RAMB36_X0Y13         RAMB36E1 (Prop_ramb36e1_CASCADEINA_DOADO[0])
-                                                      0.425     1.518 f  <hidden>
-                         net (fo=1, routed)           1.781     3.299    <hidden>
-    SLICE_X8Y43          LUT6 (Prop_lut6_I0_O)        0.124     3.423 f  <hidden>
-                         net (fo=1, routed)           0.000     3.423    <hidden>
-    SLICE_X8Y43          MUXF7 (Prop_muxf7_I0_O)      0.209     3.632 f  <hidden>
-                         net (fo=1, routed)           0.596     4.228    vga_control/douta[0]
-    SLICE_X8Y45          LUT2 (Prop_lut2_I0_O)        0.297     4.525 r  vga_control/vgaR_ext_port_OBUF_inst_i_1/O
-                         net (fo=3, routed)           2.571     7.096    vgaB_ext_port_OBUF
-    J18                  OBUF (Prop_obuf_I_O)         3.525    10.621 r  vgaB_ext_port_OBUF_inst/O
-                         net (fo=0)                   0.000    10.621    vgaB_ext_port
+    SLICE_X9Y51          FDRE                         0.000     0.000 r  vga_control/xcord_reg[6]/C
+    SLICE_X9Y51          FDRE (Prop_fdre_C_Q)         0.456     0.456 r  vga_control/xcord_reg[6]/Q
+                         net (fo=8, routed)           1.456     1.912    vga_control/xcord_reg_n_0_[6]
+    SLICE_X8Y54          LUT2 (Prop_lut2_I0_O)        0.124     2.036 r  vga_control/i__carry_i_7/O
+                         net (fo=1, routed)           0.000     2.036    vga_control/i__carry_i_7_n_0
+    SLICE_X8Y54          CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     2.549 r  vga_control/video_on2_inferred__0/i__carry/CO[3]
+                         net (fo=1, routed)           0.000     2.549    vga_control/video_on2_inferred__0/i__carry_n_0
+    SLICE_X8Y55          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     2.666 r  vga_control/video_on2_inferred__0/i__carry__0/CO[3]
+                         net (fo=1, routed)           0.000     2.666    vga_control/video_on2_inferred__0/i__carry__0_n_0
+    SLICE_X8Y56          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     2.783 r  vga_control/video_on2_inferred__0/i__carry__1/CO[3]
+                         net (fo=1, routed)           0.000     2.783    vga_control/video_on2_inferred__0/i__carry__1_n_0
+    SLICE_X8Y57          CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.254     3.037 f  vga_control/video_on2_inferred__0/i__carry__2/CO[0]
+                         net (fo=20, routed)          1.735     4.771    vga_control/video_on2_inferred__0/i__carry__2_n_3
+    SLICE_X8Y48          LUT3 (Prop_lut3_I1_O)        0.367     5.138 r  vga_control/vgaR_ext_port_OBUF_inst_i_1/O
+                         net (fo=3, routed)           2.652     7.790    vgaB_ext_port_OBUF
+    J18                  OBUF (Prop_obuf_I_O)         3.525    11.315 r  vgaB_ext_port_OBUF_inst/O
+                         net (fo=0)                   0.000    11.315    vgaB_ext_port
     J18                                                               r  vgaB_ext_port (OUT)
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 <hidden>
-                            (rising edge-triggered cell RAMB36E1)
+  Source:                 vga_control/xcord_reg[6]/C
+                            (rising edge-triggered cell FDRE)
   Destination:            vgaG_ext_port
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        10.066ns  (logic 5.613ns (55.768%)  route 4.452ns (44.232%))
-  Logic Levels:           6  (LUT2=1 LUT6=1 MUXF7=1 OBUF=1 RAMB36E1=2)
+  Data Path Delay:        10.621ns  (logic 5.478ns (51.580%)  route 5.143ns (48.420%))
+  Logic Levels:           8  (CARRY4=4 FDRE=1 LUT2=1 LUT3=1 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    RAMB36_X0Y12         RAMB36E1                     0.000     0.000 r  <hidden>
-    RAMB36_X0Y12         RAMB36E1 (Prop_ramb36e1_CLKARDCLK_CASCADEOUTA)
-                                                      1.028     1.028 r  <hidden>
-                         net (fo=1, routed)           0.065     1.093    <hidden>
-    RAMB36_X0Y13         RAMB36E1 (Prop_ramb36e1_CASCADEINA_DOADO[0])
-                                                      0.425     1.518 f  <hidden>
-                         net (fo=1, routed)           1.781     3.299    <hidden>
-    SLICE_X8Y43          LUT6 (Prop_lut6_I0_O)        0.124     3.423 f  <hidden>
-                         net (fo=1, routed)           0.000     3.423    <hidden>
-    SLICE_X8Y43          MUXF7 (Prop_muxf7_I0_O)      0.209     3.632 f  <hidden>
-                         net (fo=1, routed)           0.596     4.228    vga_control/douta[0]
-    SLICE_X8Y45          LUT2 (Prop_lut2_I0_O)        0.297     4.525 r  vga_control/vgaR_ext_port_OBUF_inst_i_1/O
-                         net (fo=3, routed)           2.011     6.535    vgaB_ext_port_OBUF
-    D17                  OBUF (Prop_obuf_I_O)         3.530    10.066 r  vgaG_ext_port_OBUF_inst/O
-                         net (fo=0)                   0.000    10.066    vgaG_ext_port
+    SLICE_X9Y51          FDRE                         0.000     0.000 r  vga_control/xcord_reg[6]/C
+    SLICE_X9Y51          FDRE (Prop_fdre_C_Q)         0.456     0.456 r  vga_control/xcord_reg[6]/Q
+                         net (fo=8, routed)           1.456     1.912    vga_control/xcord_reg_n_0_[6]
+    SLICE_X8Y54          LUT2 (Prop_lut2_I0_O)        0.124     2.036 r  vga_control/i__carry_i_7/O
+                         net (fo=1, routed)           0.000     2.036    vga_control/i__carry_i_7_n_0
+    SLICE_X8Y54          CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     2.549 r  vga_control/video_on2_inferred__0/i__carry/CO[3]
+                         net (fo=1, routed)           0.000     2.549    vga_control/video_on2_inferred__0/i__carry_n_0
+    SLICE_X8Y55          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     2.666 r  vga_control/video_on2_inferred__0/i__carry__0/CO[3]
+                         net (fo=1, routed)           0.000     2.666    vga_control/video_on2_inferred__0/i__carry__0_n_0
+    SLICE_X8Y56          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     2.783 r  vga_control/video_on2_inferred__0/i__carry__1/CO[3]
+                         net (fo=1, routed)           0.000     2.783    vga_control/video_on2_inferred__0/i__carry__1_n_0
+    SLICE_X8Y57          CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.254     3.037 f  vga_control/video_on2_inferred__0/i__carry__2/CO[0]
+                         net (fo=20, routed)          1.735     4.771    vga_control/video_on2_inferred__0/i__carry__2_n_3
+    SLICE_X8Y48          LUT3 (Prop_lut3_I1_O)        0.367     5.138 r  vga_control/vgaR_ext_port_OBUF_inst_i_1/O
+                         net (fo=3, routed)           1.952     7.091    vgaB_ext_port_OBUF
+    D17                  OBUF (Prop_obuf_I_O)         3.530    10.621 r  vgaG_ext_port_OBUF_inst/O
+                         net (fo=0)                   0.000    10.621    vgaG_ext_port
     D17                                                               r  vgaG_ext_port (OUT)
   -------------------------------------------------------------------    -------------------
 
@@ -579,85 +597,52 @@ Slack:                    inf
   Destination:            <hidden>
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        8.601ns  (logic 4.485ns (52.146%)  route 4.116ns (47.854%))
-  Logic Levels:           3  (DSP48E1=1 LUT2=1 LUT3=1)
+  Data Path Delay:        8.065ns  (logic 4.512ns (55.945%)  route 3.553ns (44.055%))
+  Logic Levels:           3  (DSP48E1=1 LUT3=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    DSP48_X0Y18          DSP48E1                      0.000     0.000 r  vga_control/addr_port0/CLK
-    DSP48_X0Y18          DSP48E1 (Prop_dsp48e1_CLK_P[16])
-                                                      4.009     4.009 f  vga_control/addr_port0/P[16]
-                         net (fo=1, routed)           1.178     5.187    vga_control/addr_port0_n_89
-    SLICE_X7Y48          LUT2 (Prop_lut2_I0_O)        0.150     5.337 f  vga_control/frame_buf_i_3/O
-                         net (fo=7, routed)           1.388     6.725    <hidden>
-    SLICE_X8Y44          LUT3 (Prop_lut3_I0_O)        0.326     7.051 r  <hidden>
-                         net (fo=2, routed)           1.550     8.601    <hidden>
-    RAMB36_X0Y4          RAMB36E1                                     r  <hidden>
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 vga_control/addr_port0/CLK
-                            (rising edge-triggered cell DSP48E1)
-  Destination:            <hidden>
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        8.349ns  (logic 4.514ns (54.068%)  route 3.835ns (45.932%))
-  Logic Levels:           3  (DSP48E1=1 LUT2=1 LUT3=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    DSP48_X0Y18          DSP48E1                      0.000     0.000 r  vga_control/addr_port0/CLK
-    DSP48_X0Y18          DSP48E1 (Prop_dsp48e1_CLK_P[16])
+    DSP48_X0Y20          DSP48E1                      0.000     0.000 r  vga_control/addr_port0/CLK
+    DSP48_X0Y20          DSP48E1 (Prop_dsp48e1_CLK_P[16])
                                                       4.009     4.009 r  vga_control/addr_port0/P[16]
-                         net (fo=1, routed)           1.178     5.187    vga_control/addr_port0_n_89
-    SLICE_X7Y48          LUT2 (Prop_lut2_I0_O)        0.150     5.337 r  vga_control/frame_buf_i_3/O
-                         net (fo=7, routed)           1.039     6.376    <hidden>
-    SLICE_X8Y44          LUT3 (Prop_lut3_I2_O)        0.355     6.731 r  <hidden>
-                         net (fo=2, routed)           1.617     8.349    <hidden>
-    RAMB36_X0Y13         RAMB36E1                                     r  <hidden>
+                         net (fo=1, routed)           1.356     5.365    vga_control/addr_port0_n_89
+    SLICE_X8Y48          LUT3 (Prop_lut3_I2_O)        0.146     5.511 r  vga_control/frame_buf_i_3/O
+                         net (fo=7, routed)           0.837     6.348    <hidden>
+    SLICE_X8Y47          LUT3 (Prop_lut3_I2_O)        0.357     6.705 r  <hidden>
+                         net (fo=2, routed)           1.360     8.065    <hidden>
+    RAMB36_X0Y5          RAMB36E1                                     r  <hidden>
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 vga_control/addr_port0/CLK
-                            (rising edge-triggered cell DSP48E1)
+  Source:                 vga_control/xcord_reg[6]/C
+                            (rising edge-triggered cell FDRE)
   Destination:            <hidden>
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        8.312ns  (logic 4.513ns (54.296%)  route 3.799ns (45.704%))
-  Logic Levels:           3  (DSP48E1=1 LUT2=1 LUT3=1)
+  Data Path Delay:        7.869ns  (logic 1.948ns (24.755%)  route 5.921ns (75.245%))
+  Logic Levels:           7  (CARRY4=4 FDRE=1 LUT2=1 LUT3=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    DSP48_X0Y18          DSP48E1                      0.000     0.000 r  vga_control/addr_port0/CLK
-    DSP48_X0Y18          DSP48E1 (Prop_dsp48e1_CLK_P[16])
-                                                      4.009     4.009 r  vga_control/addr_port0/P[16]
-                         net (fo=1, routed)           1.178     5.187    vga_control/addr_port0_n_89
-    SLICE_X7Y48          LUT2 (Prop_lut2_I0_O)        0.150     5.337 r  vga_control/frame_buf_i_3/O
-                         net (fo=7, routed)           1.388     6.725    <hidden>
-    SLICE_X8Y44          LUT3 (Prop_lut3_I2_O)        0.354     7.079 r  <hidden>
-                         net (fo=2, routed)           1.233     8.312    <hidden>
-    RAMB36_X0Y11         RAMB36E1                                     r  <hidden>
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 vga_control/addr_port0/CLK
-                            (rising edge-triggered cell DSP48E1)
-  Destination:            <hidden>
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        8.220ns  (logic 4.485ns (54.564%)  route 3.735ns (45.436%))
-  Logic Levels:           3  (DSP48E1=1 LUT2=1 LUT3=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    DSP48_X0Y18          DSP48E1                      0.000     0.000 r  vga_control/addr_port0/CLK
-    DSP48_X0Y18          DSP48E1 (Prop_dsp48e1_CLK_P[16])
-                                                      4.009     4.009 f  vga_control/addr_port0/P[16]
-                         net (fo=1, routed)           1.178     5.187    vga_control/addr_port0_n_89
-    SLICE_X7Y48          LUT2 (Prop_lut2_I0_O)        0.150     5.337 f  vga_control/frame_buf_i_3/O
-                         net (fo=7, routed)           1.388     6.725    <hidden>
-    SLICE_X8Y44          LUT3 (Prop_lut3_I0_O)        0.326     7.051 r  <hidden>
-                         net (fo=2, routed)           1.169     8.220    <hidden>
+    SLICE_X9Y51          FDRE                         0.000     0.000 r  vga_control/xcord_reg[6]/C
+    SLICE_X9Y51          FDRE (Prop_fdre_C_Q)         0.456     0.456 r  vga_control/xcord_reg[6]/Q
+                         net (fo=8, routed)           1.456     1.912    vga_control/xcord_reg_n_0_[6]
+    SLICE_X8Y54          LUT2 (Prop_lut2_I0_O)        0.124     2.036 r  vga_control/i__carry_i_7/O
+                         net (fo=1, routed)           0.000     2.036    vga_control/i__carry_i_7_n_0
+    SLICE_X8Y54          CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     2.549 r  vga_control/video_on2_inferred__0/i__carry/CO[3]
+                         net (fo=1, routed)           0.000     2.549    vga_control/video_on2_inferred__0/i__carry_n_0
+    SLICE_X8Y55          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     2.666 r  vga_control/video_on2_inferred__0/i__carry__0/CO[3]
+                         net (fo=1, routed)           0.000     2.666    vga_control/video_on2_inferred__0/i__carry__0_n_0
+    SLICE_X8Y56          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     2.783 r  vga_control/video_on2_inferred__0/i__carry__1/CO[3]
+                         net (fo=1, routed)           0.000     2.783    vga_control/video_on2_inferred__0/i__carry__1_n_0
+    SLICE_X8Y57          CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.254     3.037 f  vga_control/video_on2_inferred__0/i__carry__2/CO[0]
+                         net (fo=20, routed)          1.776     4.813    vga_control/video_on2_inferred__0/i__carry__2_n_3
+    SLICE_X8Y50          LUT3 (Prop_lut3_I1_O)        0.367     5.180 r  vga_control/frame_buf_i_16/O
+                         net (fo=10, routed)          2.689     7.869    <hidden>
     RAMB36_X0Y5          RAMB36E1                                     r  <hidden>
   -------------------------------------------------------------------    -------------------
 
@@ -667,64 +652,117 @@ Slack:                    inf
   Destination:            <hidden>
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        7.945ns  (logic 4.485ns (56.449%)  route 3.460ns (43.551%))
-  Logic Levels:           3  (DSP48E1=1 LUT2=1 LUT3=1)
+  Data Path Delay:        7.782ns  (logic 4.483ns (57.611%)  route 3.299ns (42.389%))
+  Logic Levels:           3  (DSP48E1=1 LUT3=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    DSP48_X0Y18          DSP48E1                      0.000     0.000 r  vga_control/addr_port0/CLK
-    DSP48_X0Y18          DSP48E1 (Prop_dsp48e1_CLK_P[16])
+    DSP48_X0Y20          DSP48E1                      0.000     0.000 r  vga_control/addr_port0/CLK
+    DSP48_X0Y20          DSP48E1 (Prop_dsp48e1_CLK_P[16])
                                                       4.009     4.009 f  vga_control/addr_port0/P[16]
-                         net (fo=1, routed)           1.178     5.187    vga_control/addr_port0_n_89
-    SLICE_X7Y48          LUT2 (Prop_lut2_I0_O)        0.150     5.337 f  vga_control/frame_buf_i_3/O
-                         net (fo=7, routed)           1.039     6.376    <hidden>
-    SLICE_X8Y44          LUT3 (Prop_lut3_I0_O)        0.326     6.702 r  <hidden>
-                         net (fo=2, routed)           1.243     7.945    <hidden>
+                         net (fo=1, routed)           1.356     5.365    vga_control/addr_port0_n_89
+    SLICE_X8Y48          LUT3 (Prop_lut3_I2_O)        0.146     5.511 f  vga_control/frame_buf_i_3/O
+                         net (fo=7, routed)           0.837     6.348    <hidden>
+    SLICE_X8Y47          LUT3 (Prop_lut3_I0_O)        0.328     6.676 r  <hidden>
+                         net (fo=2, routed)           1.106     7.782    <hidden>
+    RAMB36_X0Y7          RAMB36E1                                     r  <hidden>
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 vga_control/xcord_reg[6]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            <hidden>
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        7.692ns  (logic 1.976ns (25.688%)  route 5.716ns (74.312%))
+  Logic Levels:           7  (CARRY4=4 FDRE=1 LUT2=1 LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y51          FDRE                         0.000     0.000 r  vga_control/xcord_reg[6]/C
+    SLICE_X9Y51          FDRE (Prop_fdre_C_Q)         0.456     0.456 r  vga_control/xcord_reg[6]/Q
+                         net (fo=8, routed)           1.456     1.912    vga_control/xcord_reg_n_0_[6]
+    SLICE_X8Y54          LUT2 (Prop_lut2_I0_O)        0.124     2.036 r  vga_control/i__carry_i_7/O
+                         net (fo=1, routed)           0.000     2.036    vga_control/i__carry_i_7_n_0
+    SLICE_X8Y54          CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     2.549 r  vga_control/video_on2_inferred__0/i__carry/CO[3]
+                         net (fo=1, routed)           0.000     2.549    vga_control/video_on2_inferred__0/i__carry_n_0
+    SLICE_X8Y55          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     2.666 r  vga_control/video_on2_inferred__0/i__carry__0/CO[3]
+                         net (fo=1, routed)           0.000     2.666    vga_control/video_on2_inferred__0/i__carry__0_n_0
+    SLICE_X8Y56          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     2.783 r  vga_control/video_on2_inferred__0/i__carry__1/CO[3]
+                         net (fo=1, routed)           0.000     2.783    vga_control/video_on2_inferred__0/i__carry__1_n_0
+    SLICE_X8Y57          CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.254     3.037 f  vga_control/video_on2_inferred__0/i__carry__2/CO[0]
+                         net (fo=20, routed)          1.768     4.805    vga_control/video_on2_inferred__0/i__carry__2_n_3
+    SLICE_X8Y50          LUT3 (Prop_lut3_I1_O)        0.395     5.200 r  vga_control/frame_buf_i_19/O
+                         net (fo=10, routed)          2.493     7.692    <hidden>
+    RAMB36_X0Y5          RAMB36E1                                     r  <hidden>
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 vga_control/addr_port0/CLK
+                            (rising edge-triggered cell DSP48E1)
+  Destination:            <hidden>
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        7.652ns  (logic 4.155ns (54.302%)  route 3.497ns (45.698%))
+  Logic Levels:           2  (DSP48E1=1 LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y20          DSP48E1                      0.000     0.000 r  vga_control/addr_port0/CLK
+    DSP48_X0Y20          DSP48E1 (Prop_dsp48e1_CLK_P[6])
+                                                      4.009     4.009 r  vga_control/addr_port0/P[6]
+                         net (fo=1, routed)           1.137     5.146    vga_control/addr_port0_n_99
+    SLICE_X8Y51          LUT3 (Prop_lut3_I2_O)        0.146     5.292 r  vga_control/frame_buf_i_13/O
+                         net (fo=10, routed)          2.360     7.652    <hidden>
+    RAMB36_X0Y5          RAMB36E1                                     r  <hidden>
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 vga_control/addr_port0/CLK
+                            (rising edge-triggered cell DSP48E1)
+  Destination:            <hidden>
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        7.640ns  (logic 4.483ns (58.675%)  route 3.157ns (41.325%))
+  Logic Levels:           3  (DSP48E1=1 LUT3=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y20          DSP48E1                      0.000     0.000 r  vga_control/addr_port0/CLK
+    DSP48_X0Y20          DSP48E1 (Prop_dsp48e1_CLK_P[16])
+                                                      4.009     4.009 f  vga_control/addr_port0/P[16]
+                         net (fo=1, routed)           1.356     5.365    vga_control/addr_port0_n_89
+    SLICE_X8Y48          LUT3 (Prop_lut3_I2_O)        0.146     5.511 f  vga_control/frame_buf_i_3/O
+                         net (fo=7, routed)           0.499     6.010    <hidden>
+    SLICE_X8Y48          LUT3 (Prop_lut3_I0_O)        0.328     6.338 r  <hidden>
+                         net (fo=2, routed)           1.303     7.640    <hidden>
+    RAMB36_X0Y14         RAMB36E1                                     r  <hidden>
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 vga_control/addr_port0/CLK
+                            (rising edge-triggered cell DSP48E1)
+  Destination:            <hidden>
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        7.628ns  (logic 4.512ns (59.153%)  route 3.116ns (40.847%))
+  Logic Levels:           3  (DSP48E1=1 LUT3=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    DSP48_X0Y20          DSP48E1                      0.000     0.000 r  vga_control/addr_port0/CLK
+    DSP48_X0Y20          DSP48E1 (Prop_dsp48e1_CLK_P[16])
+                                                      4.009     4.009 r  vga_control/addr_port0/P[16]
+                         net (fo=1, routed)           1.356     5.365    vga_control/addr_port0_n_89
+    SLICE_X8Y48          LUT3 (Prop_lut3_I2_O)        0.146     5.511 r  vga_control/frame_buf_i_3/O
+                         net (fo=7, routed)           0.837     6.348    <hidden>
+    SLICE_X8Y47          LUT3 (Prop_lut3_I2_O)        0.357     6.705 r  <hidden>
+                         net (fo=2, routed)           0.923     7.628    <hidden>
     RAMB36_X0Y6          RAMB36E1                                     r  <hidden>
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 vga_control/addr_port0/CLK
-                            (rising edge-triggered cell DSP48E1)
-  Destination:            <hidden>
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        7.925ns  (logic 4.513ns (56.948%)  route 3.412ns (43.052%))
-  Logic Levels:           3  (DSP48E1=1 LUT2=1 LUT3=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    DSP48_X0Y18          DSP48E1                      0.000     0.000 r  vga_control/addr_port0/CLK
-    DSP48_X0Y18          DSP48E1 (Prop_dsp48e1_CLK_P[16])
-                                                      4.009     4.009 r  vga_control/addr_port0/P[16]
-                         net (fo=1, routed)           1.178     5.187    vga_control/addr_port0_n_89
-    SLICE_X7Y48          LUT2 (Prop_lut2_I0_O)        0.150     5.337 r  vga_control/frame_buf_i_3/O
-                         net (fo=7, routed)           1.388     6.725    <hidden>
-    SLICE_X8Y44          LUT3 (Prop_lut3_I2_O)        0.354     7.079 r  <hidden>
-                         net (fo=2, routed)           0.846     7.925    <hidden>
-    RAMB36_X0Y10         RAMB36E1                                     r  <hidden>
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 vga_control/addr_port0/CLK
-                            (rising edge-triggered cell DSP48E1)
-  Destination:            <hidden>
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        7.835ns  (logic 4.514ns (57.610%)  route 3.321ns (42.390%))
-  Logic Levels:           3  (DSP48E1=1 LUT2=1 LUT3=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    DSP48_X0Y18          DSP48E1                      0.000     0.000 r  vga_control/addr_port0/CLK
-    DSP48_X0Y18          DSP48E1 (Prop_dsp48e1_CLK_P[16])
-                                                      4.009     4.009 r  vga_control/addr_port0/P[16]
-                         net (fo=1, routed)           1.178     5.187    vga_control/addr_port0_n_89
-    SLICE_X7Y48          LUT2 (Prop_lut2_I0_O)        0.150     5.337 r  vga_control/frame_buf_i_3/O
-                         net (fo=7, routed)           1.039     6.376    <hidden>
-    SLICE_X8Y44          LUT3 (Prop_lut3_I2_O)        0.355     6.731 r  <hidden>
-                         net (fo=2, routed)           1.104     7.835    <hidden>
-    RAMB36_X0Y12         RAMB36E1                                     r  <hidden>
   -------------------------------------------------------------------    -------------------
 
 
@@ -734,20 +772,20 @@ Slack:                    inf
 Min Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 vga_sync/hsync_onelate_reg/C
+  Source:                 <hidden>
                             (rising edge-triggered cell FDRE)
-  Destination:            vga_sync/hsync_out_port_reg/D
+  Destination:            <hidden>
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.258ns  (logic 0.141ns (54.552%)  route 0.117ns (45.448%))
+  Data Path Delay:        0.283ns  (logic 0.164ns (57.942%)  route 0.119ns (42.058%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X7Y50          FDRE                         0.000     0.000 r  vga_sync/hsync_onelate_reg/C
-    SLICE_X7Y50          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  vga_sync/hsync_onelate_reg/Q
-                         net (fo=1, routed)           0.117     0.258    vga_sync/hsync_onelate
-    SLICE_X6Y48          FDRE                                         r  vga_sync/hsync_out_port_reg/D
+    SLICE_X8Y48          FDRE                         0.000     0.000 r  <hidden>
+    SLICE_X8Y48          FDRE (Prop_fdre_C_Q)         0.164     0.164 r  <hidden>
+                         net (fo=2, routed)           0.119     0.283    <hidden>
+    SLICE_X9Y47          FDRE                                         r  <hidden>
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
@@ -756,15 +794,15 @@ Slack:                    inf
   Destination:            <hidden>
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.304ns  (logic 0.164ns (53.927%)  route 0.140ns (46.073%))
+  Data Path Delay:        0.295ns  (logic 0.164ns (55.560%)  route 0.131ns (44.440%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X8Y44          FDRE                         0.000     0.000 r  <hidden>
-    SLICE_X8Y44          FDRE (Prop_fdre_C_Q)         0.164     0.164 r  <hidden>
-                         net (fo=7, routed)           0.140     0.304    <hidden>
-    SLICE_X8Y43          FDRE                                         r  <hidden>
+    SLICE_X8Y47          FDRE                         0.000     0.000 r  <hidden>
+    SLICE_X8Y47          FDRE (Prop_fdre_C_Q)         0.164     0.164 r  <hidden>
+                         net (fo=7, routed)           0.131     0.295    <hidden>
+    SLICE_X8Y46          FDRE                                         r  <hidden>
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
@@ -773,15 +811,15 @@ Slack:                    inf
   Destination:            <hidden>
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.306ns  (logic 0.164ns (53.557%)  route 0.142ns (46.443%))
+  Data Path Delay:        0.309ns  (logic 0.164ns (53.026%)  route 0.145ns (46.974%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X8Y44          FDRE                         0.000     0.000 r  <hidden>
-    SLICE_X8Y44          FDRE (Prop_fdre_C_Q)         0.164     0.164 r  <hidden>
-                         net (fo=7, routed)           0.142     0.306    <hidden>
-    SLICE_X9Y43          FDRE                                         r  <hidden>
+    SLICE_X8Y47          FDRE                         0.000     0.000 r  <hidden>
+    SLICE_X8Y47          FDRE (Prop_fdre_C_Q)         0.164     0.164 r  <hidden>
+                         net (fo=7, routed)           0.145     0.309    <hidden>
+    SLICE_X8Y46          FDRE                                         r  <hidden>
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
@@ -790,32 +828,15 @@ Slack:                    inf
   Destination:            <hidden>
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.307ns  (logic 0.164ns (53.377%)  route 0.143ns (46.623%))
+  Data Path Delay:        0.319ns  (logic 0.164ns (51.408%)  route 0.155ns (48.592%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X8Y43          FDRE                         0.000     0.000 r  <hidden>
-    SLICE_X8Y43          FDRE (Prop_fdre_C_Q)         0.164     0.164 r  <hidden>
-                         net (fo=6, routed)           0.143     0.307    <hidden>
-    SLICE_X8Y43          FDRE                                         r  <hidden>
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 vga_sync/vsync_onelate_reg/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            vga_sync/vsync_out_port_reg/D
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.315ns  (logic 0.141ns (44.783%)  route 0.174ns (55.217%))
-  Logic Levels:           1  (FDRE=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X0Y29          FDRE                         0.000     0.000 r  vga_sync/vsync_onelate_reg/C
-    SLICE_X0Y29          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  vga_sync/vsync_onelate_reg/Q
-                         net (fo=1, routed)           0.174     0.315    vga_sync/vsync_onelate
-    SLICE_X0Y29          FDRE                                         r  vga_sync/vsync_out_port_reg/D
+    SLICE_X8Y47          FDRE                         0.000     0.000 r  <hidden>
+    SLICE_X8Y47          FDRE (Prop_fdre_C_Q)         0.164     0.164 r  <hidden>
+                         net (fo=3, routed)           0.155     0.319    <hidden>
+    SLICE_X8Y46          FDRE                                         r  <hidden>
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
@@ -824,92 +845,115 @@ Slack:                    inf
   Destination:            <hidden>
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.329ns  (logic 0.141ns (42.868%)  route 0.188ns (57.132%))
+  Data Path Delay:        0.364ns  (logic 0.164ns (45.093%)  route 0.200ns (54.907%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X9Y43          FDRE                         0.000     0.000 r  <hidden>
-    SLICE_X9Y43          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  <hidden>
-                         net (fo=2, routed)           0.188     0.329    <hidden>
-    SLICE_X9Y43          FDRE                                         r  <hidden>
+    SLICE_X8Y47          FDRE                         0.000     0.000 r  <hidden>
+    SLICE_X8Y47          FDRE (Prop_fdre_C_Q)         0.164     0.164 r  <hidden>
+                         net (fo=6, routed)           0.200     0.364    <hidden>
+    SLICE_X8Y46          FDRE                                         r  <hidden>
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 <hidden>
+  Source:                 vga_control/xcord_reg[5]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            <hidden>
+  Destination:            vga_control/xcord_reg[5]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.334ns  (logic 0.128ns (38.320%)  route 0.206ns (61.680%))
-  Logic Levels:           1  (FDRE=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X9Y43          FDRE                         0.000     0.000 r  <hidden>
-    SLICE_X9Y43          FDRE (Prop_fdre_C_Q)         0.128     0.128 r  <hidden>
-                         net (fo=3, routed)           0.206     0.334    <hidden>
-    SLICE_X9Y43          FDRE                                         r  <hidden>
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 vga_control/ycord_reg[20]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            vga_control/ycord_reg[20]/D
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.366ns  (logic 0.249ns (67.994%)  route 0.117ns (32.006%))
+  Data Path Delay:        0.373ns  (logic 0.256ns (68.565%)  route 0.117ns (31.435%))
   Logic Levels:           2  (CARRY4=1 FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X15Y49         FDRE                         0.000     0.000 r  vga_control/ycord_reg[20]/C
-    SLICE_X15Y49         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  vga_control/ycord_reg[20]/Q
-                         net (fo=2, routed)           0.117     0.258    vga_control/ycord_reg_n_0_[20]
-    SLICE_X15Y49         CARRY4 (Prop_carry4_S[3]_O[3])
-                                                      0.108     0.366 r  vga_control/ycord0_carry__3/O[3]
-                         net (fo=1, routed)           0.000     0.366    vga_control/ycord0_carry__3_n_4
-    SLICE_X15Y49         FDRE                                         r  vga_control/ycord_reg[20]/D
+    SLICE_X9Y51          FDRE                         0.000     0.000 r  vga_control/xcord_reg[5]/C
+    SLICE_X9Y51          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  vga_control/xcord_reg[5]/Q
+                         net (fo=7, routed)           0.117     0.258    vga_control/xcord_reg_n_0_[5]
+    SLICE_X9Y51          CARRY4 (Prop_carry4_S[0]_O[0])
+                                                      0.115     0.373 r  vga_control/xcord_reg[8]_i_1/O[0]
+                         net (fo=2, routed)           0.000     0.373    vga_control/data0[5]
+    SLICE_X9Y51          FDRE                                         r  vga_control/xcord_reg[5]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 vga_control/ycord_reg[12]/C
+  Source:                 vga_control/xcord_reg[9]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            vga_control/ycord_reg[12]/D
+  Destination:            vga_control/xcord_reg[9]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.369ns  (logic 0.249ns (67.424%)  route 0.120ns (32.576%))
+  Data Path Delay:        0.373ns  (logic 0.256ns (68.565%)  route 0.117ns (31.435%))
   Logic Levels:           2  (CARRY4=1 FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X15Y47         FDRE                         0.000     0.000 r  vga_control/ycord_reg[12]/C
-    SLICE_X15Y47         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  vga_control/ycord_reg[12]/Q
-                         net (fo=2, routed)           0.120     0.261    vga_control/ycord_reg_n_0_[12]
-    SLICE_X15Y47         CARRY4 (Prop_carry4_S[3]_O[3])
-                                                      0.108     0.369 r  vga_control/ycord0_carry__1/O[3]
-                         net (fo=2, routed)           0.000     0.369    vga_control/ycord0_carry__1_n_4
-    SLICE_X15Y47         FDRE                                         r  vga_control/ycord_reg[12]/D
+    SLICE_X9Y52          FDRE                         0.000     0.000 r  vga_control/xcord_reg[9]/C
+    SLICE_X9Y52          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  vga_control/xcord_reg[9]/Q
+                         net (fo=8, routed)           0.117     0.258    vga_control/xcord_reg_n_0_[9]
+    SLICE_X9Y52          CARRY4 (Prop_carry4_S[0]_O[0])
+                                                      0.115     0.373 r  vga_control/xcord_reg[12]_i_1/O[0]
+                         net (fo=2, routed)           0.000     0.373    vga_control/data0[9]
+    SLICE_X9Y52          FDRE                                         r  vga_control/xcord_reg[9]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 vga_control/ycord_reg[16]/C
+  Source:                 vga_control/xcord_reg[15]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            vga_control/ycord_reg[16]/D
+  Destination:            vga_control/xcord_reg[15]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.369ns  (logic 0.249ns (67.424%)  route 0.120ns (32.576%))
+  Data Path Delay:        0.374ns  (logic 0.252ns (67.467%)  route 0.122ns (32.533%))
   Logic Levels:           2  (CARRY4=1 FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X15Y48         FDRE                         0.000     0.000 r  vga_control/ycord_reg[16]/C
-    SLICE_X15Y48         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  vga_control/ycord_reg[16]/Q
-                         net (fo=2, routed)           0.120     0.261    vga_control/ycord_reg_n_0_[16]
-    SLICE_X15Y48         CARRY4 (Prop_carry4_S[3]_O[3])
-                                                      0.108     0.369 r  vga_control/ycord0_carry__2/O[3]
-                         net (fo=2, routed)           0.000     0.369    vga_control/ycord0_carry__2_n_4
-    SLICE_X15Y48         FDRE                                         r  vga_control/ycord_reg[16]/D
+    SLICE_X9Y53          FDRE                         0.000     0.000 r  vga_control/xcord_reg[15]/C
+    SLICE_X9Y53          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  vga_control/xcord_reg[15]/Q
+                         net (fo=8, routed)           0.122     0.263    vga_control/xcord_reg_n_0_[15]
+    SLICE_X9Y53          CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.111     0.374 r  vga_control/xcord_reg[16]_i_1/O[2]
+                         net (fo=2, routed)           0.000     0.374    vga_control/data0[15]
+    SLICE_X9Y53          FDRE                                         r  vga_control/xcord_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 vga_control/xcord_reg[20]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            vga_control/xcord_reg[20]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.381ns  (logic 0.249ns (65.279%)  route 0.132ns (34.721%))
+  Logic Levels:           2  (CARRY4=1 FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y54          FDRE                         0.000     0.000 r  vga_control/xcord_reg[20]/C
+    SLICE_X9Y54          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  vga_control/xcord_reg[20]/Q
+                         net (fo=7, routed)           0.132     0.273    vga_control/xcord_reg_n_0_[20]
+    SLICE_X9Y54          CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.108     0.381 r  vga_control/xcord_reg[20]_i_1/O[3]
+                         net (fo=1, routed)           0.000     0.381    vga_control/data0[20]
+    SLICE_X9Y54          FDRE                                         r  vga_control/xcord_reg[20]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 vga_control/xcord_reg[4]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            vga_control/xcord_reg[4]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.382ns  (logic 0.249ns (65.268%)  route 0.133ns (34.732%))
+  Logic Levels:           2  (CARRY4=1 FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y50          FDRE                         0.000     0.000 r  vga_control/xcord_reg[4]/C
+    SLICE_X9Y50          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  vga_control/xcord_reg[4]/Q
+                         net (fo=5, routed)           0.133     0.274    vga_control/xcord_reg_n_0_[4]
+    SLICE_X9Y50          CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.108     0.382 r  vga_control/xcord_reg[4]_i_1/O[3]
+                         net (fo=2, routed)           0.000     0.382    vga_control/data0[4]
+    SLICE_X9Y50          FDRE                                         r  vga_control/xcord_reg[4]/D
   -------------------------------------------------------------------    -------------------
 
 

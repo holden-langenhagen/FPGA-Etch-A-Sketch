@@ -1,9 +1,0 @@
-# compile verilog/system verilog design source files
-verilog xil_defaultlib  \
-"../../../../FPGA_Etch_A_Sketch.gen/sources_1/ip/frame_buffer_IP/sim/frame_buffer_IP.v" \
-
-# compile glbl module
-verilog xil_defaultlib "glbl.v"
-
-# Do not sort compile order
-nosort
