@@ -15,9 +15,10 @@ set_property PACKAGE_PIN W5 [get_ports clk_ext_port]
 ##====================================================================
 ## Switch_ports
 ##====================================================================
-## SWITCH 0 (RIGHT MOST SWITCH)
-##set_property PACKAGE_PIN V17 [get_ports right_ext_port]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports right_ext_port]
+# SWITCH 0 (RIGHT MOST SWITCH)
+set_property PACKAGE_PIN V17 [get_ports clear_ext_port]					
+	set_property IOSTANDARD LVCMOS33 [get_ports clear_ext_port]
+	
 ## SWITCH 1
 #set_property PACKAGE_PIN V16 [get_ports {sw_ext_port[1]}]					
 	#set_property IOSTANDARD LVCMOS33 [get_ports {sw_ext_port[1]}]
@@ -161,18 +162,18 @@ set_property PACKAGE_PIN W5 [get_ports clk_ext_port]
 ## CENTER BUTTON
 #set_property PACKAGE_PIN U18 [get_ports btnC_ext_port]						
 	#set_property IOSTANDARD LVCMOS33 [get_ports btnC_ext_port]
-## UP BUTTON
-#set_property PACKAGE_PIN T18 [get_ports btnU_ext_port]						
-	#set_property IOSTANDARD LVCMOS33 [get_ports btnU_ext_port]
-## LEFT BUTTON
-#set_property PACKAGE_PIN W19 [get_ports btnL_ext_port]						
-	#set_property IOSTANDARD LVCMOS33 [get_ports btnL_ext_port]
-## RIGHT BUTTON
-#set_property PACKAGE_PIN T17 [get_ports btnR_ext_port]						
-	#set_property IOSTANDARD LVCMOS33 [get_ports btnR_ext_port]
-## DOWN BUTTON
-#set_property PACKAGE_PIN U17 [get_ports btnD_ext_port]						
-	#set_property IOSTANDARD LVCMOS33 [get_ports btnD_ext_port]
+# UP BUTTON
+set_property PACKAGE_PIN T18 [get_ports up_ext_port]						
+	set_property IOSTANDARD LVCMOS33 [get_ports up_ext_port]
+# LEFT BUTTON
+set_property PACKAGE_PIN W19 [get_ports left_ext_port]						
+	set_property IOSTANDARD LVCMOS33 [get_ports left_ext_port]
+# RIGHT BUTTON
+set_property PACKAGE_PIN T17 [get_ports right_ext_port]						
+	set_property IOSTANDARD LVCMOS33 [get_ports right_ext_port]
+# DOWN BUTTON
+set_property PACKAGE_PIN U17 [get_ports down_ext_port]						
+	set_property IOSTANDARD LVCMOS33 [get_ports down_ext_port]
  
 
 ##====================================================================

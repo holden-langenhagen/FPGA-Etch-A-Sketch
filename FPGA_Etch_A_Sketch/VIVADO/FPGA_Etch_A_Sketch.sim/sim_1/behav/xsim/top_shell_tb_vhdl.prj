@@ -1,0 +1,17 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../VHDL/button_conditioning.vhd" \
+"../../../../../VHDL/clock_divider.vhd" \
+"../../../../../VHDL/cursor_tracker.vhd" \
+"../../../../../VHDL/top_shell.vhd" \
+"../../../../../VHDL/Test Benches/top_shell_tb.vhd" \
+"../../../../../VHDL/Test Benches/cursor_tracker_tb.vhd" \
+"../../../../../VHDL/vga_controller.vhd" \
+"../../../../../VHDL/Test Benches/button_conditioning_tb.vhd" \
+"../../../../../VHDL/frame_updater.vhd" \
+"../../../../../VHDL/vga_synchronizer.vhd" \
+"../../../../../VHDL/Test Benches/vga_controller_tb.vhd" \
+"../../../../../VHDL/Test Benches/vga_synchronizer_tb.vhd" \
+
+# Do not sort compile order
+nosort

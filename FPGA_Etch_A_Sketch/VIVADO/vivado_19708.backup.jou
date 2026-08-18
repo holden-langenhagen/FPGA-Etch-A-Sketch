@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# Vivado v2024.2.2 (64-bit)
+# SW Build 6060944 on Thu Mar 06 19:10:01 MST 2025
+# IP Build 6050500 on Thu Mar  6 23:33:39 MST 2025
+# SharedData Build 6060542 on Thu Mar 06 10:31:07 MST 2025
+# Start of session at: Mon Aug 17 14:12:04 2026
+# Process ID         : 19708
+# Current directory  : O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VIVADO
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent15444 O:\ENGS31\Etch_A_Sketch\FPGA_Etch_A_Sketch\VIVADO\FPGA_Etch_A_Sketch.xpr
+# Log file           : O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VIVADO/vivado.log
+# Journal file       : O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VIVADO\vivado.jou
+# Running On         : c011-09
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : Intel(R) Core(TM) i7-14700
+# CPU Frequency      : 2112 MHz
+# CPU Physical cores : 20
+# CPU Logical cores  : 28
+# Host memory        : 34031 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 36178 MB
+# Available Virtual  : 24366 MB
+#-----------------------------------------------------------
+start_gui
+open_project O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VIVADO/FPGA_Etch_A_Sketch.xpr
+add_files {O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/VGA/vga_controller.vhd O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/VGA/frame_buffer.vhd {O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/Cursor Tracker/cursor_tracker.vhd} {O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/Cursor Tracker/cursor_tracker_tb.vhd} O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/VGA/vga_test_Shell.vhd O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/VGA/vga_test.vhd O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/VGA/vga_test_clk.vhd}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+add_files -fileset constrs_1 -norecurse O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/ENGS31_Constraints_Template.xdc
