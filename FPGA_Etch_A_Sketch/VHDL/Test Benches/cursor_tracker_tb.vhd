@@ -30,6 +30,7 @@ architecture testbench of cursor_tracker_tb is
           down_port   		: in std_logic;
           left_port			: in std_logic;
           right_port      	: in std_logic;
+          vblank_port       : in std_logic;
                   
           --coordinate outputs
           x_port			: out std_logic_vector(9 downto 0);
@@ -41,7 +42,7 @@ architecture testbench of cursor_tracker_tb is
   --=============================================================================
   
   constant CLK_PERIOD : time := 40ns; -- 25 MHz
-  signal clk, up, down, left, right : std_logic := '0';
+  signal clk, up, down, left, right,vblank : std_logic := '0';
   
   begin
 
@@ -58,6 +59,7 @@ architecture testbench of cursor_tracker_tb is
           down_port   		=> down,
           left_port			=> left,
           right_port      	=> right,
+          vblank_port       => vblank,
                   
           --coordinate outputs
           x_port			=> open,
@@ -81,28 +83,122 @@ architecture testbench of cursor_tracker_tb is
   Stimulus : process
   begin
   	right <= '1';
-    wait for 10*CLK_PERIOD;
+  	
+  	vblank <= '1'; -- simulate a frame
+  	wait for 4*CLK_PERIOD;
+  	vblank <= '0';
+  	wait for 4*CLK_PERIOD;
+  	
+  	vblank <= '1'; -- simulate frame 2
+  	wait for 4*CLK_PERIOD;
+  	vblank <= '0';
+  	wait for 4*CLK_PERIOD;
+  	
+  	vblank <= '1'; -- simulate frame 3
+  	wait for 4*CLK_PERIOD;
+  	vblank <= '0';
+  	wait for 4*CLK_PERIOD;
+  	
     right <= '0';
     left <= '1';
-    wait for 20*CLK_PERIOD;
-    left <= '0';
+    
+    vblank <= '1'; -- simulate a frame
+  	wait for 4*CLK_PERIOD;
+  	vblank <= '0';
+  	wait for 4*CLK_PERIOD;
+  	
+  	vblank <= '1'; -- simulate frame 2
+  	wait for 4*CLK_PERIOD;
+  	vblank <= '0';
+  	wait for 4*CLK_PERIOD;
+  	
+  	vblank <= '1'; -- simulate frame 3
+  	wait for 4*CLK_PERIOD;
+  	vblank <= '0';
+  	wait for 4*CLK_PERIOD;
+  	
+  	left <= '0';
     
     up <= '1';
-    wait for 10*CLK_PERIOD;
-    up <= '0';
-    down <= '1';
-    wait for 20*CLK_PERIOD;
-    down <= '0';
     
+    vblank <= '1'; -- simulate a frame
+  	wait for 4*CLK_PERIOD;
+  	vblank <= '0';
+  	wait for 4*CLK_PERIOD;
+  	
+  	vblank <= '1'; -- simulate frame 2
+  	wait for 4*CLK_PERIOD;
+  	vblank <= '0';
+  	wait for 4*CLK_PERIOD;
+  	
+  	vblank <= '1'; -- simulate frame 3
+  	wait for 4*CLK_PERIOD;
+  	vblank <= '0';
+  	wait for 4*CLK_PERIOD;
+  	
+  	
+  	up <= '0';
+    down <= '1';
+    
+    vblank <= '1'; -- simulate a frame
+  	wait for 4*CLK_PERIOD;
+  	vblank <= '0';
+  	wait for 4*CLK_PERIOD;
+  	
+  	vblank <= '1'; -- simulate frame 2
+  	wait for 4*CLK_PERIOD;
+  	vblank <= '0';
+  	wait for 4*CLK_PERIOD;
+  	
+  	vblank <= '1'; -- simulate frame 3
+  	wait for 4*CLK_PERIOD;
+  	vblank <= '0';
+  	wait for 4*CLK_PERIOD;
+  	
+  	
+  	down <= '0';
     up <= '1';
     right <= '1';
-    wait for 10*CLK_PERIOD;
-    up <= '0';
+    
+    
+    vblank <= '1'; -- simulate a frame
+  	wait for 4*CLK_PERIOD;
+  	vblank <= '0';
+  	wait for 4*CLK_PERIOD;
+  	
+  	vblank <= '1'; -- simulate frame 2
+  	wait for 4*CLK_PERIOD;
+  	vblank <= '0';
+  	wait for 4*CLK_PERIOD;
+  	
+  	vblank <= '1'; -- simulate frame 3
+  	wait for 4*CLK_PERIOD;
+  	vblank <= '0';
+  	wait for 4*CLK_PERIOD;
+  	
+  	
+  	up <= '0';
     right <= '0';
     down <= '1';
     left <= '1';
-    wait for 20*CLK_PERIOD;
-    down <= '0';
+    
+    vblank <= '1'; -- simulate a frame
+  	wait for 4*CLK_PERIOD;
+  	vblank <= '0';
+  	wait for 4*CLK_PERIOD;
+  	
+  	vblank <= '1'; -- simulate frame 2
+  	wait for 4*CLK_PERIOD;
+  	vblank <= '0';
+  	wait for 4*CLK_PERIOD;
+  	
+  	vblank <= '1'; -- simulate frame 3
+  	wait for 4*CLK_PERIOD;
+  	vblank <= '0';
+  	wait for 4*CLK_PERIOD;
+  	
+  	
+  	down <= '0';
     left <= '0';
     
   

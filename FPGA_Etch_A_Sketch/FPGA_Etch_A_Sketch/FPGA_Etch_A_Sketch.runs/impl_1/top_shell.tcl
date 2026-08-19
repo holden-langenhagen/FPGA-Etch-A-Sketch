@@ -122,7 +122,7 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1/top_shell.dcp
-  read_ip -quiet o:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.srcs/sources_1/ip/frame_buffer_IP/frame_buffer_IP.xci
+  read_ip -quiet O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.srcs/sources_1/ip/frame_buffer_IP/frame_buffer_IP.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/ENGS31_Constraints_Template.xdc
 OPTRACE "read constraints: implementation" END { }

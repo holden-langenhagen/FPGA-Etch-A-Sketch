@@ -15,9 +15,6 @@ use ieee.math_real.all;
 --Entity Declaration:
 --=============================================================================
 entity cursor_tracker is
-    Generic(
-        CLK_DIVIDER : integer -- TC for ticker @60 Hz on hardware with 25 MHz clock input
-    );
     Port (
         --timing:
         clk_port	: in std_logic;
@@ -27,6 +24,7 @@ entity cursor_tracker is
         down_port   	: in std_logic;
 		left_port		: in std_logic;
         right_port      : in std_logic;
+        vblank_port     : in std_logic;
         
         --coordinate outputs
         x_port			: out std_logic_vector(9 downto 0);
@@ -44,8 +42,7 @@ architecture behavioral of cursor_tracker is
     constant YMAX : integer := 479;
     signal XEmpty,XFull : std_logic := '0';
     signal YEmpty,YFull : std_logic := '0';
-    signal TickCount : unsigned(18 downto 0) := (others => '0'); -- room for CLK_DIVIDER
-    signal TC : std_logic := '0'; -- terminal count for ticker
+    signal Tick,monotoggle : std_logic := '0'; -- monopulsed vblank
     signal XCount : unsigned(9 downto 0) := (others => '0'); -- UNCOMMENT FOR HARDWARE
     signal YCount : unsigned(8 downto 0) := (others => '0'); -- UNCOMMENT FOR HARDWARE
     --signal XCount : unsigned(9 downto 0) := to_unsigned(XMAX,10); -- SIMULATION FOR UPPER BOUNDS TESTING
@@ -56,23 +53,23 @@ architecture behavioral of cursor_tracker is
     --=============================================================================
     --Processes: 
     --=============================================================================
-    -- Slow ticker to create a realistic cursor moving speed
-    Ticker : process(clk_port)
+    --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    --Monopulser:
+    --+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    --A monopulsed output is an output that is high for one clock cycle.
+    monopulser: process(clk_port, vblank_port, monotoggle)
     begin
         if rising_edge(clk_port) then
-            TickCount <= TickCount + 1;
-            if (TickCount = CLK_DIVIDER-1) then
-                TickCount <= (others => '0');
-            end if; 
+            monotoggle <= vblank_port;
         end if;
-    end process Ticker;
-    TC <= '1' when TickCount = CLK_DIVIDER-1 else '0'; -- Async TC Count
+        Tick <= vblank_port and not(monotoggle);
+    end process monopulser;
     
     -- Tick-synchronous button triggered X coordinate counter
-    XCounter : process(clk_port,right_port,left_port,XFull,XEmpty)
+    XCounter : process(clk_port,Tick,right_port,left_port,XFull,XEmpty)
     begin
     	if rising_edge(clk_port) then
-        	if TC = '1' then
+        	if Tick = '1' then
             	if (right_port = '1' and left_port = '0' and XFull = '0') then
                 	XCount <= XCount + 1; -- INCREMENT X
                 elsif (right_port = '0' and left_port = '1' and XEmpty = '0') then
@@ -85,10 +82,10 @@ architecture behavioral of cursor_tracker is
     XEmpty <= '1' when XCount = 0 else '0';
     
     -- Tick-synchronous button triggered Y coordinate counter
-    YCounter : process(clk_port,right_port,left_port,YFull,YEmpty)
+    YCounter : process(clk_port,Tick,right_port,left_port,YFull,YEmpty)
     begin
     	if rising_edge(clk_port) then
-        	if TC = '1' then
+        	if Tick = '1' then
             	if (down_port = '1' and up_port = '0' and YFull = '0') then
                 	YCount <= YCount + 1; -- INCREMENT Y
                 elsif (down_port = '0' and up_port = '1' and YEmpty = '0') then

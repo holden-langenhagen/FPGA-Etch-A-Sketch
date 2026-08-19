@@ -66,8 +66,6 @@ end component;
 
 --Cursor Tracker:
 component cursor_tracker is
-    Generic(
-        CLK_DIVIDER : integer);
     Port (
         --timing:
         clk_port	: in std_logic;
@@ -77,6 +75,7 @@ component cursor_tracker is
         down_port   	: in std_logic;
 		left_port		: in std_logic;
         right_port      : in std_logic;
+        vblank_port     : in std_logic;
         
         --coordinate outputs
         x_port			: out std_logic_vector(9 downto 0);
@@ -220,9 +219,6 @@ clocking : system_clock_generator
  
  -- CURSOR TRACKER ++++++++++++++++++++++++++++++++++++++++++++++++++++++
  tracker : cursor_tracker
-    generic map(
-        CLK_DIVIDER => TICKER_DIVIDER
-    )
     port map(
         --timing:
         clk_port	=> system_clk,
@@ -232,6 +228,7 @@ clocking : system_clock_generator
         down_port   	=> down,
 		left_port		=> left,
         right_port      => right,
+        vblank_port     => vblank,
         
         --coordinate outputs
         x_port			=> cursorX,

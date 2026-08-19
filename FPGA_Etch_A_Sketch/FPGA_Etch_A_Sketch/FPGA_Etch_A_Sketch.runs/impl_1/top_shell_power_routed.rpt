@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
-| Date             : Wed Aug 19 11:07:56 2026
+| Date             : Wed Aug 19 12:28:38 2026
 | Host             : c011-09 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_shell_power_routed.rpt -pb top_shell_power_summary_routed.pb -rpx top_shell_power_routed.rpx
 | Design           : top_shell
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.001 |      899 |       --- |             --- |
-|   LUT as Logic |     0.001 |      396 |     20800 |            1.90 |
-|   CARRY4       |    <0.001 |       86 |      8150 |            1.06 |
-|   Register     |    <0.001 |      245 |     41600 |            0.59 |
+| Slice Logic    |     0.001 |      871 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      397 |     20800 |            1.91 |
+|   CARRY4       |    <0.001 |       81 |      8150 |            0.99 |
+|   Register     |    <0.001 |      227 |     41600 |            0.55 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   F7/F8 Muxes  |    <0.001 |        1 |     32600 |           <0.01 |
 |   Others       |     0.000 |       37 |       --- |             --- |
-| Signals        |     0.001 |      698 |       --- |             --- |
+| Signals        |     0.001 |      670 |       --- |             --- |
 | Block RAM      |    <0.001 |      9.5 |        50 |           19.00 |
 | DSPs           |     0.001 |        2 |        90 |            2.22 |
 | I/O            |     0.004 |       11 |       106 |           10.38 |
@@ -148,6 +148,7 @@ Table of Contents
 |   frame_buf            |     0.001 |
 |     U0                 |     0.001 |
 |       inst_blk_mem_gen |     0.001 |
+|   frame_update         |     0.001 |
 |   vga_control          |     0.002 |
 +------------------------+-----------+
 

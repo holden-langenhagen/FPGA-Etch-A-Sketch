@@ -27,7 +27,7 @@ architecture Behavioral of frame_updater is
 	-- FSM SIGNALS
 	type state is (IDLE,WAIT_VBLANK,WAIT_VIS_SCREEN,WRITE_CLR,WRITE_BRUSH,BRUSH_WRITE_DONE);
     signal current_state,next_state : state := IDLE;
-    signal brush_en,brush_done : std_logic := '0';
+    signal brush_en,brush_done,brush_data : std_logic := '0';
     signal brush_addr : std_logic_vector(18 downto 0) := (others => '0');
     
     -- DATAPATH SIGNALS
@@ -72,7 +72,7 @@ begin
         end case;
     end process nextState;
     
-    outputState : process(current_state,brush_addr)
+    outputState : process(current_state,brush_addr,brush_data)
     begin
     	write_en_port <= '0'; -- default outputs
         data_in_port <= '0';
@@ -86,7 +86,7 @@ begin
             	write_en_port <= '1'; -- write zeros to clear the screen         	
             when WRITE_BRUSH =>
             	write_en_port <= '1'; -- start the brush datapath and write the addresses it returns
-                data_in_port <= '1';
+                data_in_port <= brush_data;
                 addr_port <= brush_addr;
                 brush_en <= '1';
             when others =>
@@ -130,8 +130,9 @@ begin
         elsif cursorY < (DIAMETER-1)/2 then -- set lower y bound
         	drawY <= vcount;
         end if;
+        
     end process asyncDatapath;
     brush_addr <= std_logic_vector(to_unsigned(640*drawY+drawX,19)); -- math to get address from x and y (frame buffer is structured left to right then top to bottom)
-
+    brush_data <= '0' when ((vcount = (DIAMETER-1)/2) and (hcount = (DIAMETER-1)/2)) else '1';
     
 end Behavioral;
