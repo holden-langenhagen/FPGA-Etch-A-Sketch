@@ -89,9 +89,9 @@ architecture behavioral of cursor_tracker is
     begin
     	if rising_edge(clk_port) then
         	if TC = '1' then
-            	if (up_port = '1' and down_port = '0' and YFull = '0') then
+            	if (down_port = '1' and up_port = '0' and YFull = '0') then
                 	YCount <= YCount + 1; -- INCREMENT Y
-                elsif (up_port = '0' and down_port = '1' and YEmpty = '0') then
+                elsif (down_port = '0' and up_port = '1' and YEmpty = '0') then
                 	YCount <= YCount - 1; -- DECREMENT Y
                 end if;
             end if;
