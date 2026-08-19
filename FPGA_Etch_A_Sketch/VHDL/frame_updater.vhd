@@ -25,18 +25,18 @@ end frame_updater;
 architecture Behavioral of frame_updater is
 
 	-- FSM SIGNALS
-	type state is (IDLE,WAIT_VBLANK,WAIT_VIS_SCREEN,WRITE_CLR,WRITE_BRUSH);
+	type state is (IDLE,WAIT_VBLANK,WAIT_VIS_SCREEN,WRITE_CLR,WRITE_BRUSH,BRUSH_WRITE_DONE);
     signal current_state,next_state : state := IDLE;
     signal brush_en,brush_done : std_logic := '0';
     signal brush_addr : std_logic_vector(18 downto 0) := (others => '0');
     
     -- DATAPATH SIGNALS
     constant DIAMETER : integer := 3; -- must be odd
-    signal hcount,vcount : unsigned(3 downto 0) := (others => '0');
+    signal hcount,vcount : integer := 0;
     signal cursorX : unsigned(9 downto 0) := (others => '0');
     signal cursorY : unsigned(8 downto 0) := (others => '0');
-   	signal drawX : unsigned(9 downto 0) := (others => '0');
-    signal drawY : unsigned(8 downto 0) := (others => '0');
+   	signal drawX : integer := 0;
+    signal drawY : integer := 0;
     signal uns_addr : unsigned (18 downto 0) := (others => '0');
 
     
@@ -52,18 +52,22 @@ begin
     
     nextState : process(current_state,clear_port,Vblank_port,brush_done)
     begin
+        next_state <= current_state;
     	case current_state is
         	when IDLE => -- start brush write cycle or clear cycle
-            	next_state <= WRITE_BRUSH when Vblank_port = '1'; 
-                next_state <= WAIT_VBLANK when clear_port = '1';
+            	if (Vblank_port = '1') then next_state <= WRITE_BRUSH; end if;
+                if (clear_port = '1') then next_state <= WAIT_VBLANK; end if;
             when WAIT_VBLANK => -- wait until the vertical blanking region
-            	next_state <= WAIT_VIS_SCREEN when Vblank_port = '1';
+            	if (Vblank_port = '1') then next_state <= WAIT_VIS_SCREEN; end if;
             when WAIT_VIS_SCREEN => -- wait until address is back to top left
-            	next_state <= WRITE_CLR when Vblank_port = '0';
+            	if (Vblank_port = '0') then next_state <= WRITE_CLR; end if;
             when WRITE_CLR => -- stop clear cycle when blanking segment reached again
-            	next_state <= IDLE when Vblank_port = '1';
+            	if (Vblank_port = '1') then next_state <= IDLE; end if;
             when WRITE_BRUSH =>
-            	next_state <= IDLE when brush_done = '1';
+            	if (brush_done = '1') then next_state <= BRUSH_WRITE_DONE; end if; 
+            when BRUSH_WRITE_DONE => -- forces brush cycle to only happen once during the blanking region
+                if (clear_port = '1') then next_state <= WAIT_VBLANK; end if;
+                if (Vblank_port = '0') then next_state <= IDLE; end if;
             when others =>
         end case;
     end process nextState;
@@ -98,9 +102,9 @@ begin
         if rising_edge(clk_port) then
         	if brush_en = '1' then -- enable datapath counter
               if(hcount=DIAMETER-1) then
-                  hcount<=(others => '0');
+                  hcount<=0;
                   if(vcount=DIAMETER-1) then
-                      vcount<=(others => '0');
+                      vcount<=0;
                   else
                       vcount<=vcount+1;
                   end if;
@@ -114,20 +118,20 @@ begin
     
     asyncDatapath : process(cursorX,cursorY,hcount,vcount)
     begin
-    	drawX <= cursorX - (DIAMETER-1)/2 + hcount; -- default case
-        drawY <= cursorY - (DIAMETER-1)/2 + vcount;
+    	drawX <= to_integer(cursorX - (DIAMETER-1)/2 + hcount); -- default case
+        drawY <= to_integer(cursorY - (DIAMETER-1)/2 + vcount);
     	if cursorX > 639-(DIAMETER-1)/2 then -- set upper x bound
-        	drawX <= "0000000000" + (639-(DIAMETER-1)/2) - (DIAMETER-1)/2 + hcount;
+        	drawX <= (639-(DIAMETER-1)/2) - (DIAMETER-1)/2 + hcount;
         elsif cursorX < (DIAMETER-1)/2 then -- set lower x bound
-        	drawX <= "000000" & hcount;
+        	drawX <= hcount;
         end if;
         if cursorY > 479-(DIAMETER-1)/2 then -- set upper y bound
-        	drawY <= "000000000" + (479-(DIAMETER-1)/2) - (DIAMETER-1)/2 + vcount;
+        	drawY <= (479-(DIAMETER-1)/2) - (DIAMETER-1)/2 + vcount;
         elsif cursorY < (DIAMETER-1)/2 then -- set lower y bound
-        	drawY <= "00000" & vcount;
+        	drawY <= vcount;
         end if;
     end process asyncDatapath;
-    brush_addr <= std_logic_vector("0000000000000000000" + 640*drawY+drawX); -- math to get address from x and y (frame buffer is structured left to right then top to bottom)
+    brush_addr <= std_logic_vector(to_unsigned(640*drawY+drawX,19)); -- math to get address from x and y (frame buffer is structured left to right then top to bottom)
 
     
 end Behavioral;

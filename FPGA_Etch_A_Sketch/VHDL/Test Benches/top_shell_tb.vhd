@@ -97,6 +97,8 @@ architecture testbench of top_shell_tb is
   	right <= '1';
     up <= '1';
     wait for 700*CLK_PERIOD;
+    clear <= '1';
+    wait for 700*CLK_PERIOD;
     right <= '0';
     up <= '0';
     

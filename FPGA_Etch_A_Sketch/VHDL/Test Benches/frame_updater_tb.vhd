@@ -26,6 +26,9 @@ architecture testbench of frame_updater_tb is
     signal clk,clear,vblank : std_logic := '0';
     signal cursorX : std_logic_vector(9 downto 0);
     signal cursorY : std_logic_vector(8 downto 0);
+    signal write_en : std_logic := '0';
+    signal data_in : std_logic := '0';
+    signal addr    : std_logic_vector(18 downto 0) := (others => '0');
 
 
     begin
@@ -40,9 +43,9 @@ architecture testbench of frame_updater_tb is
 
             Vblank_port => vblank, -- flag if frame has reached the bottom vertical blanking region (aka time to update the frame buffer)
 
-            write_en_port => open,
-            data_in_port => open,
-            addr_port    => open);
+            write_en_port => write_en,
+            data_in_port => data_in,
+            addr_port    => addr);
 	
     clkGen : process -- Generate 25 MHz clk
     begin
@@ -55,22 +58,22 @@ architecture testbench of frame_updater_tb is
     
     stimProc : process -- Send coordinates and inputs to study response
     begin
-    	cursorX <= "0001000000"; -- coordinate (64,64)
-        cursorY <= "001000000";
+    	cursorX <= "0000000000"; -- coordinate (64,64)
+        cursorY <= "000000000";
         vblank <= '0';
-        wait for 15*CLK_PERIOD; -- tests brush writing cycle
+        wait for 30*CLK_PERIOD; -- tests brush writing cycle
         
         vblank <= '1';
-        wait for 10*CLK_PERIOD;
+        wait for 15*CLK_PERIOD;
         
-        vblank <= '0';
-        clear <= '1';
-        wait for 5*CLK_PERIOD; -- test clear cycle
-        clear <= '0';
-        wait for 10*CLK_PERIOD;
+--        vblank <= '0';
+--        clear <= '1';
+--        wait for 5*CLK_PERIOD; -- test clear cycle
+--        clear <= '0';
+--        wait for 10*CLK_PERIOD;
         
-        vblank <= '1';
-        wait for 10*CLK_PERIOD;
+--        vblank <= '1';
+--        wait for 15*CLK_PERIOD;
 
         
     end process stimProc;
