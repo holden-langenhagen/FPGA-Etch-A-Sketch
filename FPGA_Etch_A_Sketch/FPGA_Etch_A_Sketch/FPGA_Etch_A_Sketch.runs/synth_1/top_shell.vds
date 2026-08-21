@@ -3,12 +3,12 @@
 # SW Build 6060944 on Thu Mar 06 19:10:01 MST 2025
 # IP Build 6050500 on Thu Mar  6 23:33:39 MST 2025
 # SharedData Build 6060542 on Thu Mar 06 10:31:07 MST 2025
-# Start of session at: Wed Aug 19 12:27:25 2026
-# Process ID         : 8572
-# Current directory  : O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1
+# Start of session at: Thu Aug 20 23:21:04 2026
+# Process ID         : 16356
+# Current directory  : O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1
 # Command line       : vivado.exe -log top_shell.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_shell.tcl
-# Log file           : O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1/top_shell.vds
-# Journal file       : O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1\vivado.jou
+# Log file           : O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1/top_shell.vds
+# Journal file       : O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1\vivado.jou
 # Running On         : c011-09
 # Platform           : Windows Server 2016 or Windows 10
 # Operating System   : 26100
@@ -19,11 +19,11 @@
 # Host memory        : 34031 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 36178 MB
-# Available Virtual  : 24404 MB
+# Available Virtual  : 14761 MB
 #-----------------------------------------------------------
 source top_shell.tcl -notrace
-Command: read_checkpoint -auto_incremental -incremental O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.srcs/utils_1/imports/synth_1/top_shell.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.srcs/utils_1/imports/synth_1/top_shell.dcp for incremental synthesis
+Command: read_checkpoint -auto_incremental -incremental O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.srcs/utils_1/imports/synth_1/top_shell.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.srcs/utils_1/imports/synth_1/top_shell.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top top_shell -part xc7a35tcpg236-1
 Starting synth_design
@@ -34,100 +34,100 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 23120
+INFO: [Synth 8-7075] Helper process launched with PID 7220
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 997.930 ; gain = 468.426
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 998.152 ; gain = 468.309
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'top_shell' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:40]
+INFO: [Synth 8-638] synthesizing module 'top_shell' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:47]
 	Parameter CLOCK_DIVIDER_RATIO bound to: 4 - type: integer 
-INFO: [Synth 8-3491] module 'system_clock_generator' declared at 'O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/clock_divider.vhd:14' bound to instance 'clocking' of component 'system_clock_generator' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:160]
-INFO: [Synth 8-638] synthesizing module 'system_clock_generator' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/clock_divider.vhd:25]
+INFO: [Synth 8-3491] module 'system_clock_generator' declared at 'O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/clock_divider.vhd:14' bound to instance 'clocking' of component 'system_clock_generator' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:171]
+INFO: [Synth 8-638] synthesizing module 'system_clock_generator' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/clock_divider.vhd:25]
 	Parameter CLOCK_DIVIDER_RATIO bound to: 4 - type: integer 
-INFO: [Synth 8-113] binding component instance 'system_clock_buffer' to cell 'BUFG' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/clock_divider.vhd:63]
+INFO: [Synth 8-113] binding component instance 'system_clock_buffer' to cell 'BUFG' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/clock_divider.vhd:63]
 	Parameter DDR_CLK_EDGE bound to: SAME_EDGE - type: string 
 	Parameter INIT bound to: 1'b0 
 	Parameter SRTYPE bound to: SYNC - type: string 
-INFO: [Synth 8-113] binding component instance 'clock_forwarding_ODDR' to cell 'ODDR' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/clock_divider.vhd:72]
-INFO: [Synth 8-256] done synthesizing module 'system_clock_generator' (0#1) [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/clock_divider.vhd:25]
+INFO: [Synth 8-113] binding component instance 'clock_forwarding_ODDR' to cell 'ODDR' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/clock_divider.vhd:72]
+INFO: [Synth 8-256] done synthesizing module 'system_clock_generator' (0#1) [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/clock_divider.vhd:25]
 	Parameter STABLE_TIME bound to: 100 - type: integer 
-INFO: [Synth 8-3491] module 'button_interface' declared at 'O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/button_conditioning.vhd:14' bound to instance 'up_debounce' of component 'button_interface' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:170]
-INFO: [Synth 8-638] synthesizing module 'button_interface' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/button_conditioning.vhd:25]
+INFO: [Synth 8-3491] module 'button_interface' declared at 'O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/button_conditioning.vhd:14' bound to instance 'up_debounce' of component 'button_interface' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:181]
+INFO: [Synth 8-638] synthesizing module 'button_interface' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/button_conditioning.vhd:25]
 	Parameter STABLE_TIME bound to: 100 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'button_interface' (0#1) [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/button_conditioning.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'button_interface' (0#1) [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/button_conditioning.vhd:25]
 	Parameter STABLE_TIME bound to: 100 - type: integer 
-INFO: [Synth 8-3491] module 'button_interface' declared at 'O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/button_conditioning.vhd:14' bound to instance 'down_debounce' of component 'button_interface' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:180]
+INFO: [Synth 8-3491] module 'button_interface' declared at 'O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/button_conditioning.vhd:14' bound to instance 'down_debounce' of component 'button_interface' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:191]
 	Parameter STABLE_TIME bound to: 100 - type: integer 
-INFO: [Synth 8-3491] module 'button_interface' declared at 'O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/button_conditioning.vhd:14' bound to instance 'left_debounce' of component 'button_interface' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:190]
+INFO: [Synth 8-3491] module 'button_interface' declared at 'O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/button_conditioning.vhd:14' bound to instance 'left_debounce' of component 'button_interface' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:201]
 	Parameter STABLE_TIME bound to: 100 - type: integer 
-INFO: [Synth 8-3491] module 'button_interface' declared at 'O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/button_conditioning.vhd:14' bound to instance 'right_debounce' of component 'button_interface' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:200]
+INFO: [Synth 8-3491] module 'button_interface' declared at 'O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/button_conditioning.vhd:14' bound to instance 'right_debounce' of component 'button_interface' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:211]
 	Parameter STABLE_TIME bound to: 100 - type: integer 
-INFO: [Synth 8-3491] module 'button_interface' declared at 'O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/button_conditioning.vhd:14' bound to instance 'clear_debounce' of component 'button_interface' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:210]
-INFO: [Synth 8-3491] module 'cursor_tracker' declared at 'O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/cursor_tracker.vhd:17' bound to instance 'tracker' of component 'cursor_tracker' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:221]
-INFO: [Synth 8-638] synthesizing module 'cursor_tracker' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/cursor_tracker.vhd:37]
-INFO: [Synth 8-256] done synthesizing module 'cursor_tracker' (0#1) [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/cursor_tracker.vhd:37]
-INFO: [Synth 8-3491] module 'frame_updater' declared at 'O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/frame_updater.vhd:10' bound to instance 'frame_update' of component 'frame_updater' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:238]
-INFO: [Synth 8-638] synthesizing module 'frame_updater' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/frame_updater.vhd:25]
-INFO: [Synth 8-256] done synthesizing module 'frame_updater' (0#1) [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/frame_updater.vhd:25]
-INFO: [Synth 8-3491] module 'frame_buffer_IP' declared at 'O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1/.Xil/Vivado-8572-c011-09/realtime/frame_buffer_IP_stub.v:6' bound to instance 'frame_buf' of component 'frame_buffer_IP' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:256]
-INFO: [Synth 8-6157] synthesizing module 'frame_buffer_IP' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1/.Xil/Vivado-8572-c011-09/realtime/frame_buffer_IP_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'frame_buffer_IP' (0#1) [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1/.Xil/Vivado-8572-c011-09/realtime/frame_buffer_IP_stub.v:6]
-INFO: [Synth 8-3491] module 'vga_controller' declared at 'O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/vga_controller.vhd:10' bound to instance 'vga_control' of component 'vga_controller' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:267]
-INFO: [Synth 8-638] synthesizing module 'vga_controller' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/vga_controller.vhd:25]
-INFO: [Synth 8-256] done synthesizing module 'vga_controller' (0#1) [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/vga_controller.vhd:25]
-INFO: [Synth 8-3491] module 'vga_synchronizer' declared at 'O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/vga_synchronizer.vhd:11' bound to instance 'vga_sync' of component 'vga_synchronizer' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:281]
-INFO: [Synth 8-638] synthesizing module 'vga_synchronizer' [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/vga_synchronizer.vhd:27]
-INFO: [Synth 8-256] done synthesizing module 'vga_synchronizer' (0#1) [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/vga_synchronizer.vhd:27]
-INFO: [Synth 8-256] done synthesizing module 'top_shell' (0#1) [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:40]
+INFO: [Synth 8-3491] module 'button_interface' declared at 'O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/button_conditioning.vhd:14' bound to instance 'clear_debounce' of component 'button_interface' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:221]
+INFO: [Synth 8-3491] module 'cursor_tracker' declared at 'O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/cursor_tracker.vhd:17' bound to instance 'tracker' of component 'cursor_tracker' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:232]
+INFO: [Synth 8-638] synthesizing module 'cursor_tracker' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/cursor_tracker.vhd:37]
+INFO: [Synth 8-256] done synthesizing module 'cursor_tracker' (0#1) [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/cursor_tracker.vhd:37]
+INFO: [Synth 8-3491] module 'frame_updater' declared at 'O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/frame_updater.vhd:10' bound to instance 'frame_update' of component 'frame_updater' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:249]
+INFO: [Synth 8-638] synthesizing module 'frame_updater' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/frame_updater.vhd:29]
+INFO: [Synth 8-256] done synthesizing module 'frame_updater' (0#1) [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/frame_updater.vhd:29]
+INFO: [Synth 8-3491] module 'frame_buffer_IP' declared at 'O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1/.Xil/Vivado-16356-c011-09/realtime/frame_buffer_IP_stub.v:6' bound to instance 'frame_buf' of component 'frame_buffer_IP' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:271]
+INFO: [Synth 8-6157] synthesizing module 'frame_buffer_IP' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1/.Xil/Vivado-16356-c011-09/realtime/frame_buffer_IP_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'frame_buffer_IP' (0#1) [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1/.Xil/Vivado-16356-c011-09/realtime/frame_buffer_IP_stub.v:6]
+INFO: [Synth 8-3491] module 'vga_controller' declared at 'O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/vga_controller.vhd:10' bound to instance 'vga_control' of component 'vga_controller' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:282]
+INFO: [Synth 8-638] synthesizing module 'vga_controller' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/vga_controller.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'vga_controller' (0#1) [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/vga_controller.vhd:25]
+INFO: [Synth 8-3491] module 'vga_synchronizer' declared at 'O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/vga_synchronizer.vhd:11' bound to instance 'vga_sync' of component 'vga_synchronizer' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:296]
+INFO: [Synth 8-638] synthesizing module 'vga_synchronizer' [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/vga_synchronizer.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'vga_synchronizer' (0#1) [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/vga_synchronizer.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'top_shell' (0#1) [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd:47]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1109.762 ; gain = 580.258
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1110.742 ; gain = 580.898
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1109.762 ; gain = 580.258
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1110.742 ; gain = 580.898
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1109.762 ; gain = 580.258
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1110.742 ; gain = 580.898
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1109.762 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1110.742 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [o:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.gen/sources_1/ip/frame_buffer_IP/frame_buffer_IP/frame_buffer_IP_in_context.xdc] for cell 'frame_buf'
-Finished Parsing XDC File [o:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.gen/sources_1/ip/frame_buffer_IP/frame_buffer_IP/frame_buffer_IP_in_context.xdc] for cell 'frame_buf'
-Parsing XDC File [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/ENGS31_Constraints_Template.xdc]
-Finished Parsing XDC File [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/ENGS31_Constraints_Template.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/ENGS31_Constraints_Template.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_shell_propImpl.xdc].
+Parsing XDC File [o:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.gen/sources_1/ip/frame_buffer_IP/frame_buffer_IP/frame_buffer_IP_in_context.xdc] for cell 'frame_buf'
+Finished Parsing XDC File [o:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.gen/sources_1/ip/frame_buffer_IP/frame_buffer_IP/frame_buffer_IP_in_context.xdc] for cell 'frame_buf'
+Parsing XDC File [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/ENGS31_Constraints_Template.xdc]
+Finished Parsing XDC File [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/ENGS31_Constraints_Template.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/ENGS31_Constraints_Template.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_shell_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_shell_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1200.730 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1205.199 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1200.730 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1205.199 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1200.730 ; gain = 671.227
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1205.199 ; gain = 675.355
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1200.730 ; gain = 671.227
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1205.199 ; gain = 675.355
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property KEEP_HIERARCHY = SOFT for frame_buf. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1200.730 ; gain = 671.227
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1205.199 ; gain = 675.355
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'button_interface'
 ---------------------------------------------------------------------------------------------------
@@ -140,7 +140,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in modul
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'button_interface'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1200.730 ; gain = 671.227
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1205.199 ; gain = 675.355
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -166,12 +166,13 @@ Detailed RTL Component Info :
 	   2 Input   19 Bit        Muxes := 6     
 	   3 Input   19 Bit        Muxes := 1     
 	   8 Input    3 Bit        Muxes := 1     
-	   3 Input    3 Bit        Muxes := 1     
+	   3 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 2     
 	   4 Input    2 Bit        Muxes := 5     
 	   2 Input    2 Bit        Muxes := 12    
 	   2 Input    1 Bit        Muxes := 15    
 	   4 Input    1 Bit        Muxes := 10    
-	   3 Input    1 Bit        Muxes := 3     
+	   3 Input    1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -197,7 +198,7 @@ DSP Report: register xcord_reg is absorbed into DSP addr_port0.
 DSP Report: operator addr_port0 is absorbed into DSP addr_port0.
 DSP Report: operator addr_port1 is absorbed into DSP addr_port0.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1200.730 ; gain = 671.227
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1205.199 ; gain = 675.355
 ---------------------------------------------------------------------------------
  Sort Area is  addr_port0_2 : 0 0 : 415 415 : Used 1 time 0
  Sort Area is  brush_addr_0 : 0 0 : 351 351 : Used 1 time 0
@@ -221,19 +222,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 1345.359 ; gain = 815.855
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1348.383 ; gain = 818.539
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 1346.168 ; gain = 816.664
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1349.270 ; gain = 819.426
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 1374.797 ; gain = 845.293
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1377.930 ; gain = 848.086
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -251,37 +252,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1570.812 ; gain = 1041.309
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1574.328 ; gain = 1044.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1570.812 ; gain = 1041.309
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1574.328 ; gain = 1044.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1570.812 ; gain = 1041.309
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1574.328 ; gain = 1044.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1570.812 ; gain = 1041.309
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1574.328 ; gain = 1044.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1570.812 ; gain = 1041.309
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1574.328 ; gain = 1044.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1570.812 ; gain = 1041.309
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1574.328 ; gain = 1044.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -312,38 +313,38 @@ Report Cell Usage:
 |3     |CARRY4          |    81|
 |4     |DSP48E1         |     2|
 |6     |LUT1            |    35|
-|7     |LUT2            |   249|
-|8     |LUT3            |    20|
+|7     |LUT2            |   248|
+|8     |LUT3            |    19|
 |9     |LUT4            |    61|
-|10    |LUT5            |    57|
+|10    |LUT5            |    62|
 |11    |LUT6            |    88|
 |12    |ODDR            |     1|
 |13    |FDRE            |   217|
-|14    |IBUF            |     6|
-|15    |OBUF            |     5|
+|14    |IBUF            |     9|
+|15    |OBUF            |    14|
 +------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1570.812 ; gain = 1041.309
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1574.328 ; gain = 1044.484
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 1570.812 ; gain = 950.340
-Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 1570.812 ; gain = 1041.309
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 1574.328 ; gain = 950.027
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1574.328 ; gain = 1044.484
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1570.812 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1574.328 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 84 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1583.703 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1578.309 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 94c544d9
+Synth Design complete | Checksum: 277cfcee
 INFO: [Common 17-83] Releasing license: Synthesis
 54 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 1583.703 ; gain = 1244.141
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1583.703 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1/top_shell.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 1578.309 ; gain = 1238.242
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1578.309 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1/top_shell.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file top_shell_utilization_synth.rpt -pb top_shell_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Aug 19 12:27:55 2026...
+INFO: [Common 17-206] Exiting Vivado at Thu Aug 20 23:21:33 2026...

@@ -52,18 +52,24 @@ set_property PACKAGE_PIN V17 [get_ports clear_ext_port]
 ## SWITCH 11
 #set_property PACKAGE_PIN R3 [get_ports {sw_ext_port[11]}]					
 	#set_property IOSTANDARD LVCMOS33 [get_ports {sw_ext_port[11]}]
+set_property PACKAGE_PIN R3 [get_ports {switchR3_ext_port}]				
+	set_property IOSTANDARD LVCMOS33 [get_ports {switchR3_ext_port}]
 ## SWITCH 12
 #set_property PACKAGE_PIN W2 [get_ports {sw_ext_port[12]}]					
 	#set_property IOSTANDARD LVCMOS33 [get_ports {sw_ext_port[12]}]
 ## SWITCH 13
 #set_property PACKAGE_PIN U1 [get_ports {sw_ext_port[13]}]					
 	#set_property IOSTANDARD LVCMOS33 [get_ports {sw_ext_port[13]}]
+set_property PACKAGE_PIN U1 [get_ports {switchU1_ext_port}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {switchU1_ext_port}]
 ## SWITCH 14
 #set_property PACKAGE_PIN T1 [get_ports {sw_ext_port[14]}]					
 	#set_property IOSTANDARD LVCMOS33 [get_ports {sw_ext_port[14]}]
-## SWITCH 15 (LEFT MOST SWITCH)
+## SWITCH 15 (LEFT MOST SWITCH) 
 ##set_property PACKAGE_PIN R2 [get_ports left_ext_port]					
 	#set_property IOSTANDARD LVCMOS33 [get_ports left_ext_port]
+set_property PACKAGE_PIN R2 [get_ports switchR2_ext_port]					
+	set_property IOSTANDARD LVCMOS33 [get_ports switchR2_ext_port]
  
 ##====================================================================
 ## LED_ports
@@ -297,53 +303,37 @@ set_property PACKAGE_PIN U17 [get_ports down_ext_port]
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## RED
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#set_property PACKAGE_PIN G19 [get_ports {vgaRed_ext_port[0]}]				
-	#set_property IOSTANDARD LVCMOS33 [get_ports {vgaRed_ext_port[0]}]
-#set_property PACKAGE_PIN G19 [get_ports {vgaR_ext_port}]	
-	#set_property IOSTANDARD LVCMOS33 [get_ports {vgaR_ext_port}]
-##ABOVE LINES ARE THE SAME, SIMPLY COPIED FOR POSTERITY, also changed these to MSB
-	
-#set_property PACKAGE_PIN H19 [get_ports {vgaRed_ext_port[1]}]				
-	#set_property IOSTANDARD LVCMOS33 [get_ports {vgaRed_ext_port[1]}]
-#set_property PACKAGE_PIN J19 [get_ports {vgaRed_ext_port[2]}]				
-	#set_property IOSTANDARD LVCMOS33 [get_ports {vgaRed_ext_port[2]}]
-#set_property PACKAGE_PIN N19 [get_ports {vgaRed_ext_port[3]}]				
-	#set_property IOSTANDARD LVCMOS33 [get_ports {vgaRed_ext_port[3]}]
-set_property PACKAGE_PIN N19 [get_ports {vgaR_ext_port}]	
-	set_property IOSTANDARD LVCMOS33 [get_ports {vgaR_ext_port}]
+set_property PACKAGE_PIN G19 [get_ports {vgaR_ext_port[0]}]				
+	set_property IOSTANDARD LVCMOS33 [get_ports {vgaR_ext_port[0]}]
+set_property PACKAGE_PIN H19 [get_ports {vgaR_ext_port[1]}]				
+	set_property IOSTANDARD LVCMOS33 [get_ports {vgaR_ext_port[1]}]
+set_property PACKAGE_PIN J19 [get_ports {vgaR_ext_port[2]}]				
+	set_property IOSTANDARD LVCMOS33 [get_ports {vgaR_ext_port[2]}]
+set_property PACKAGE_PIN N19 [get_ports {vgaR_ext_port[3]}]				
+	set_property IOSTANDARD LVCMOS33 [get_ports {vgaR_ext_port[3]}]
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## BLUE
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-#set_property PACKAGE_PIN N18 [get_ports {vgaBlue_ext_port[0]}]				
-	#set_property IOSTANDARD LVCMOS33 [get_ports {vgaBlue_ext_port[0]}]
-#set_property PACKAGE_PIN N18 [get_ports {vgaB_ext_port}]	
-	#set_property IOSTANDARD LVCMOS33 [get_ports {vgaB_ext_port}] MINE
-	
-#set_property PACKAGE_PIN L18 [get_ports {vgaBlue_ext_port[1]}]				
-	#set_property IOSTANDARD LVCMOS33 [get_ports {vgaBlue_ext_port[1]}]
-#set_property PACKAGE_PIN K18 [get_ports {vgaBlue_ext_port[2]}]				
-	#set_property IOSTANDARD LVCMOS33 [get_ports {vgaBlue_ext_port[2]}]
-#set_property PACKAGE_PIN J18 [get_ports {vgaBlue_ext_port[3]}]				
-	#set_property IOSTANDARD LVCMOS33 [get_ports {vgaBlue_ext_port[3]}]
-set_property PACKAGE_PIN J18 [get_ports {vgaB_ext_port}]	
-	set_property IOSTANDARD LVCMOS33 [get_ports {vgaB_ext_port}]
+set_property PACKAGE_PIN N18 [get_ports {vgaB_ext_port[0]}]				
+	set_property IOSTANDARD LVCMOS33 [get_ports {vgaB_ext_port[0]}]
+set_property PACKAGE_PIN L18 [get_ports {vgaB_ext_port[1]}]				
+	set_property IOSTANDARD LVCMOS33 [get_ports {vgaB_ext_port[1]}]
+set_property PACKAGE_PIN K18 [get_ports {vgaB_ext_port[2]}]				
+	set_property IOSTANDARD LVCMOS33 [get_ports {vgaB_ext_port[2]}]
+set_property PACKAGE_PIN J18 [get_ports {vgaB_ext_port[3]}]				
+	set_property IOSTANDARD LVCMOS33 [get_ports {vgaB_ext_port[3]}]
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## GREEN
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#set_property PACKAGE_PIN J17 [get_ports {vgaGreen_ext_port[0]}]				
-	#set_property IOSTANDARD LVCMOS33 [get_ports {vgaGreen_ext_port[0]}]
-#set_property PACKAGE_PIN J17 [get_ports {vgaG_ext_port}]				
-	#set_property IOSTANDARD LVCMOS33 [get_ports {vgaG_ext_port}] MINE
-
-#set_property PACKAGE_PIN H17 [get_ports {vgaGreen_ext_port[1]}]ext_				
-	#set_property IOSTANDARD LVCMOS33 [get_ports {vgaGreen_ext_port[1]}]
-#set_property PACKAGE_PIN G17 [get_ports {vgaGreen_ext_port[2]}]				
-	#set_property IOSTANDARD LVCMOS33 [get_ports {vgaGreen_ext_port[2]}]
-#set_property PACKAGE_PIN D17 [get_ports {vgaGreen_ext_port[3]}]				
-	#set_property IOSTANDARD LVCMOS33 [get_ports {vgaGreen_ext_port[3]}]
-set_property PACKAGE_PIN D17 [get_ports {vgaG_ext_port}]				
-	set_property IOSTANDARD LVCMOS33 [get_ports {vgaG_ext_port}]
+set_property PACKAGE_PIN J17 [get_ports {vgaG_ext_port[0]}]				
+	set_property IOSTANDARD LVCMOS33 [get_ports {vgaG_ext_port[0]}]
+set_property PACKAGE_PIN H17 [get_ports {vgaG_ext_port[1]}]				
+	set_property IOSTANDARD LVCMOS33 [get_ports {vgaG_ext_port[1]}]
+set_property PACKAGE_PIN G17 [get_ports {vgaG_ext_port[2]}]				
+	set_property IOSTANDARD LVCMOS33 [get_ports {vgaG_ext_port[2]}]
+set_property PACKAGE_PIN D17 [get_ports {vgaG_ext_port[3]}]				
+	set_property IOSTANDARD LVCMOS33 [get_ports {vgaG_ext_port[3]}]
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## Timing
 ##++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

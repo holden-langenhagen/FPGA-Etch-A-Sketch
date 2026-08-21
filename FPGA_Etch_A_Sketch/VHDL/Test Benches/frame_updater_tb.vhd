@@ -10,6 +10,10 @@ architecture testbench of frame_updater_tb is
     component frame_updater is
         Port (
           clk_port     : in std_logic; -- 25 MHz system clock
+          
+          switchR2_port         : in  std_logic; --representing Red
+          switchU1_port         : in  std_logic; --representing Green
+          switchR3_port         : in  std_logic; --representing Blue
 
           cursorX_port : in std_logic_vector(9 downto 0); -- current coordinates of the cursor
           cursorY_port : in std_logic_vector(8 downto 0);
@@ -18,7 +22,7 @@ architecture testbench of frame_updater_tb is
           Vblank_port : in std_logic; -- flag if frame has reached the bottom vertical blanking region (aka time to update the frame buffer)
 
           write_en_port : out std_logic;
-          data_in_port : out std_logic;
+          data_in_port : out std_logic_vector(2 downto 0);
           addr_port    : out std_logic_vector(18 downto 0));
     end component frame_updater;
 
@@ -27,12 +31,13 @@ architecture testbench of frame_updater_tb is
     signal cursorX : std_logic_vector(9 downto 0);
     signal cursorY : std_logic_vector(8 downto 0);
     signal write_en : std_logic := '0';
-    signal data_in : std_logic := '0';
+    signal data_in : std_logic_vector(2 downto 0) := "000";
     signal addr    : std_logic_vector(18 downto 0) := (others => '0');
 
 
     begin
-
+   
+    
     uut : frame_updater
         Port Map (
             clk_port     => clk, -- 25 MHz system clock

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2.2 (win64) Build 6060944 Thu Mar 06 19:10:01 MST 2025
-| Date             : Wed Aug 19 12:28:38 2026
+| Date             : Thu Aug 20 23:22:19 2026
 | Host             : c011-09 running 64-bit major release  (build 9200)
 | Command          : report_power -file top_shell_power_routed.rpt -pb top_shell_power_summary_routed.pb -rpx top_shell_power_routed.rpx
 | Design           : top_shell
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.081        |
+| Total On-Chip Power (W)  | 0.094        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.009        |
-| Device Static (W)        | 0.072        |
+| Dynamic (W)              | 0.021        |
+| Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 84.6         |
-| Junction Temperature (C) | 25.4         |
+| Max Ambient (C)          | 84.5         |
+| Junction Temperature (C) | 25.5         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,19 +53,19 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.001 |      871 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      397 |     20800 |            1.91 |
+| Slice Logic    |     0.001 |      916 |       --- |             --- |
+|   LUT as Logic |     0.001 |      412 |     20800 |            1.98 |
 |   CARRY4       |    <0.001 |       81 |      8150 |            0.99 |
 |   Register     |    <0.001 |      227 |     41600 |            0.55 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
-|   F7/F8 Muxes  |    <0.001 |        1 |     32600 |           <0.01 |
-|   Others       |     0.000 |       37 |       --- |             --- |
-| Signals        |     0.001 |      670 |       --- |             --- |
-| Block RAM      |    <0.001 |      9.5 |        50 |           19.00 |
+|   F7/F8 Muxes  |    <0.001 |        3 |     32600 |           <0.01 |
+|   Others       |     0.000 |       62 |       --- |             --- |
+| Signals        |     0.002 |      718 |       --- |             --- |
+| Block RAM      |     0.002 |     28.5 |        50 |           57.00 |
 | DSPs           |     0.001 |        2 |        90 |            2.22 |
-| I/O            |     0.004 |       11 |       106 |           10.38 |
-| Static Power   |     0.072 |          |           |                 |
-| Total          |     0.081 |          |           |                 |
+| I/O            |     0.013 |       23 |       106 |           21.70 |
+| Static Power   |     0.073 |          |           |                 |
+| Total          |     0.094 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,16 +75,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.015 |       0.005 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.018 |       0.008 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.013 |       0.000 |      0.013 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.005 |       0.004 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
@@ -144,11 +144,11 @@ Table of Contents
 +------------------------+-----------+
 | Name                   | Power (W) |
 +------------------------+-----------+
-| top_shell              |     0.009 |
-|   frame_buf            |     0.001 |
-|     U0                 |     0.001 |
-|       inst_blk_mem_gen |     0.001 |
-|   frame_update         |     0.001 |
+| top_shell              |     0.021 |
+|   frame_buf            |     0.003 |
+|     U0                 |     0.003 |
+|       inst_blk_mem_gen |     0.003 |
+|   frame_update         |     0.002 |
 |   vga_control          |     0.002 |
 +------------------------+-----------+
 

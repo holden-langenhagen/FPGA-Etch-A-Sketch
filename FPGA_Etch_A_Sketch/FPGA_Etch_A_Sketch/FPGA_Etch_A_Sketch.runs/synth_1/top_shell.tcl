@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1/top_shell.tcl"
+  variable script "O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1/top_shell.tcl"
   variable category "vivado_synth"
 }
 
@@ -65,28 +65,28 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.cache/wt [current_project]
-set_property parent.project_path O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.xpr [current_project]
+set_property webtalk.parent_dir O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.cache/wt [current_project]
+set_property parent.project_path O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.xpr [current_project]
 set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:basys3:part0:1.2 [current_project]
-set_property ip_output_repo o:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.cache/ip [current_project]
+set_property ip_output_repo o:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/mona_lisa_640x480_1bit.coe
+add_files O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/mona_lisa_640x480_1bit.coe
 read_vhdl -library xil_defaultlib {
-  O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/button_conditioning.vhd
-  O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/clock_divider.vhd
-  O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/cursor_tracker.vhd
-  O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/frame_updater.vhd
-  O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/vga_controller.vhd
-  O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/vga_synchronizer.vhd
-  O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd
+  O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/button_conditioning.vhd
+  O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/clock_divider.vhd
+  O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/cursor_tracker.vhd
+  O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/frame_updater.vhd
+  O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/vga_controller.vhd
+  O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/vga_synchronizer.vhd
+  O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/top_shell.vhd
 }
-read_ip -quiet O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.srcs/sources_1/ip/frame_buffer_IP/frame_buffer_IP.xci
-set_property used_in_implementation false [get_files -all o:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.gen/sources_1/ip/frame_buffer_IP/frame_buffer_IP_ooc.xdc]
+read_ip -quiet O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.srcs/sources_1/ip/frame_buffer_IP/frame_buffer_IP.xci
+set_property used_in_implementation false [get_files -all o:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.gen/sources_1/ip/frame_buffer_IP/frame_buffer_IP_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -97,12 +97,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/ENGS31_Constraints_Template.xdc
-set_property used_in_implementation false [get_files O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/ENGS31_Constraints_Template.xdc]
+read_xdc O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/ENGS31_Constraints_Template.xdc
+set_property used_in_implementation false [get_files O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/ENGS31_Constraints_Template.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.srcs/utils_1/imports/synth_1/top_shell.dcp
+read_checkpoint -auto_incremental -incremental O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.srcs/utils_1/imports/synth_1/top_shell.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

@@ -59,8 +59,8 @@ frame_buffer_IP your_instance_name (
   .ena(ena),      // input wire ena
   .wea(wea),      // input wire [0 : 0] wea
   .addra(addra),  // input wire [18 : 0] addra
-  .dina(dina),    // input wire [0 : 0] dina
-  .douta(douta)  // output wire [0 : 0] douta
+  .dina(dina),    // input wire [2 : 0] dina
+  .douta(douta)  // output wire [2 : 0] douta
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

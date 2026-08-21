@@ -29,11 +29,18 @@ entity top_shell is
 			left_ext_port        : in std_logic;
 			right_ext_port       : in std_logic;
 			clear_ext_port       : in std_logic;
+			
+			--for color
+			switchR2_ext_port : in std_logic;
+			switchU1_ext_port : in std_logic;
+			switchR3_ext_port : in std_logic;
+			
 			Hsync_ext_port			: out std_logic;    -- ALL of the outs mapped to the VGA
-			Vsync_ext_port			: out std_logic;    
-			vgaR_ext_port			: out std_logic;    
-			vgaG_ext_port			: out std_logic;    
-			vgaB_ext_port			: out std_logic);    
+			Vsync_ext_port			: out std_logic;   
+			 
+			vgaR_ext_port			: out std_logic_vector(3 downto 0);    
+			vgaG_ext_port			: out std_logic_vector(3 downto 0);    
+			vgaB_ext_port			: out std_logic_vector(3 downto 0));    
 
     end top_shell;
 
@@ -89,8 +96,8 @@ component frame_buffer_IP IS
     ena : IN STD_LOGIC;
     wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     addra : IN STD_LOGIC_VECTOR(18 DOWNTO 0);
-    dina : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(0 DOWNTO 0)
+    dina : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+    douta : OUT STD_LOGIC_VECTOR(2 DOWNTO 0)
   );
 END component;
 
@@ -113,17 +120,16 @@ end component vga_controller;
 component vga_synchronizer is
   Port (
     clk_port : in std_logic;
-    dout_port : in std_logic; -- data from the frame buffer
+    dout_port : in std_logic_vector(2 downto 0); -- data from the frame buffer
     vsync_port : in std_logic;
     hsync_port : in std_logic;
     video_on_port   : in std_logic;
 
-    
     vsync_out_port : out std_logic;
     hsync_out_port : out std_logic;
-    vgaR_port : out std_logic;
-    vgaG_port : out std_logic;
-    vgaB_port : out std_logic
+    vgaR_port : out std_logic_vector(3 downto 0);
+    vgaG_port : out std_logic_vector(3 downto 0);
+    vgaB_port : out std_logic_vector(3 downto 0)
   );
 end component vga_synchronizer;
 
@@ -131,7 +137,11 @@ end component vga_synchronizer;
 component frame_updater is
   Port (
     clk_port     : in std_logic; -- 25 MHz system clock
-  
+    
+    switchR2_port         : in  std_logic; --representing Red
+    switchU1_port         : in  std_logic; --representing Green
+    switchR3_port         : in  std_logic; --representing Blue
+    
     cursorX_port : in std_logic_vector(9 downto 0); -- current coordinates of the cursor
     cursorY_port : in std_logic_vector(8 downto 0);
     clear_port   : in std_logic; -- if clear switch is enabled
@@ -139,7 +149,7 @@ component frame_updater is
     Vblank_port : in std_logic; -- flag if frame has reached the bottom vertical blanking region (aka time to update the frame buffer)
     
     write_en_port : out std_logic;
-    data_in_port : out std_logic;
+    data_in_port : out std_logic_vector(2 downto 0);
     addr_port    : out std_logic_vector(18 downto 0)
   );
 end component frame_updater;
@@ -149,7 +159,8 @@ signal up,down,left,right,clear : std_logic := '0'; -- internal debounced input 
 signal cursorX : std_logic_vector(9 downto 0) := (others => '0');
 signal cursorY : std_logic_vector(8 downto 0) := (others => '0');
 signal video_on,hsync,vsync,vblank : std_logic := '0';
-signal data_out,data_in,write_en : std_logic_vector(0 downto 0);
+signal write_en : std_logic_vector(0 downto 0);
+signal data_in, data_out  : std_logic_vector(2 downto 0) := (others=>'0');
 signal writeAddr : std_logic_vector(18 downto 0) := (others => '0');
 signal readAddr : std_logic_vector(18 downto 0) := (others => '0');
 signal bufAddr : std_logic_vector(18 downto 0) := (others => '0');
@@ -243,10 +254,14 @@ frame_update : frame_updater
     cursorY_port => cursorY,
     clear_port   => clear, -- if clear switch is enabled
     
+    switchR2_port  => switchR2_ext_port, 
+    switchU1_port  => switchU1_ext_port,
+    switchR3_port  => switchR3_ext_port, 	
+    
     Vblank_port => vblank, -- flag if frame has reached the bottom vertical blanking region (aka time to update the frame buffer)
     
     write_en_port => write_en(0),
-    data_in_port => data_in(0),
+    data_in_port => data_in,
     addr_port    => writeAddr
   );
  
@@ -281,10 +296,11 @@ vga_control : vga_controller
 vga_sync : vga_synchronizer
   port map (
     clk_port => system_clk,
-    dout_port => data_out(0), -- data from the frame buffer
+    dout_port => data_out, -- data from the frame buffer
     vsync_port => vsync,
     hsync_port => hsync,
     video_on_port => video_on,
+    		
     
     vsync_out_port => vsync_ext_port,
     hsync_out_port => hsync_ext_port,

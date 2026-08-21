@@ -15,11 +15,15 @@ entity frame_updater is
     cursorY_port : in std_logic_vector(8 downto 0);
     clear_port   : in std_logic; -- if clear switch is enabled
     
+    switchR2_port         : in  std_logic; --representing Red
+    switchU1_port         : in  std_logic; --representing Green
+    switchR3_port         : in  std_logic; --representing Blue
+    
     Vblank_port : in std_logic; -- flag if frame has reached the bottom vertical blanking region (aka time to update the frame buffer)
     
     write_en_port : out std_logic;
-    data_in_port : out std_logic;
-    addr_port    : out std_logic_vector(18 downto 0));
+    data_in_port : out std_logic_vector(2 downto 0); --storing RGB values going into frame buffer
+    addr_port    : out std_logic_vector(18 downto 0)); --all addresses in 2D frame buffer that have 3 bits of memory data
 end frame_updater;
 
 architecture Behavioral of frame_updater is
@@ -27,7 +31,8 @@ architecture Behavioral of frame_updater is
 	-- FSM SIGNALS
 	type state is (IDLE,WAIT_VBLANK,WAIT_VIS_SCREEN,WRITE_CLR,WRITE_BRUSH,BRUSH_WRITE_DONE);
     signal current_state,next_state : state := IDLE;
-    signal brush_en,brush_done,brush_data : std_logic := '0';
+    signal brush_en,brush_done : std_logic := '0';
+    signal brush_data: std_logic_vector(2 downto 0) :=(others=>'0');
     signal brush_addr : std_logic_vector(18 downto 0) := (others => '0');
     
     -- DATAPATH SIGNALS
@@ -38,10 +43,12 @@ architecture Behavioral of frame_updater is
    	signal drawX : integer := 0;
     signal drawY : integer := 0;
     signal uns_addr : unsigned (18 downto 0) := (others => '0');
-
+    signal color : std_logic_vector (2 downto 0) := (others => '0');
     
 
 begin
+    
+    
 	-- FSM +++++++++++++++++++++++++++++++++++++
     updateState : process(clk_port)
     begin
@@ -75,7 +82,7 @@ begin
     outputState : process(current_state,brush_addr,brush_data)
     begin
     	write_en_port <= '0'; -- default outputs
-        data_in_port <= '0';
+        data_in_port <= "000"; 
         addr_port <= (others => '0');
         brush_en <= '0';
     	case current_state is
@@ -132,7 +139,13 @@ begin
         end if;
         
     end process asyncDatapath;
-    brush_addr <= std_logic_vector(to_unsigned(640*drawY+drawX,19)); -- math to get address from x and y (frame buffer is structured left to right then top to bottom)
-    brush_data <= '0' when ((vcount = (DIAMETER-1)/2) and (hcount = (DIAMETER-1)/2)) else '1';
     
+    color(0)<=switchR3_port; --blue
+    color(1)<= switchU1_port; --green
+    color(2)<=switchR2_port; --red
+    
+    brush_addr <= std_logic_vector(to_unsigned(640*drawY+drawX,19)); -- math to get address from x and y (frame buffer is structured left to right then top to bottom)
+    
+    brush_data <= "000" when ((vcount = (DIAMETER-1)/2) and (hcount = (DIAMETER-1)/2)) else color; --creates little white dot in middle of brush
+    ---"111" 
 end Behavioral;

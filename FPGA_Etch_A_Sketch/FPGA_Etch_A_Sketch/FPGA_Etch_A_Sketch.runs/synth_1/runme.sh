@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1'
+HD_PWD='O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

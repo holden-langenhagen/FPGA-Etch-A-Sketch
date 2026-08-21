@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/impl_1/top_shell.tcl"
+  variable script "O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/impl_1/top_shell.tcl"
   variable category "vivado_impl"
 }
 
@@ -114,17 +114,17 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.cache/wt [current_project]
-  set_property parent.project_path O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.xpr [current_project]
-  set_property ip_output_repo O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.cache/ip [current_project]
+  set_property webtalk.parent_dir O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.cache/wt [current_project]
+  set_property parent.project_path O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.xpr [current_project]
+  set_property ip_output_repo O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1/top_shell.dcp
-  read_ip -quiet O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.srcs/sources_1/ip/frame_buffer_IP/frame_buffer_IP.xci
+  add_files -quiet O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.runs/synth_1/top_shell.dcp
+  read_ip -quiet O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch/FPGA_Etch_A_Sketch.srcs/sources_1/ip/frame_buffer_IP/frame_buffer_IP.xci
 OPTRACE "read constraints: implementation" START { }
-  read_xdc O:/ENGS31/Etch_A_Sketch/FPGA_Etch_A_Sketch/VHDL/ENGS31_Constraints_Template.xdc
+  read_xdc O:/ENGS31/FPGA-Etch-A-Sketch/FPGA_Etch_A_Sketch/VHDL/ENGS31_Constraints_Template.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }
